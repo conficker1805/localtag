@@ -1,0 +1,35 @@
+.container {
+  width: 1110px;
+}
+
+.navbar.navbar, .navbar-default.navbar {
+  height: 90px;
+  margin-bottom: 0;
+  background-color: #00bcd4;
+  -webkit-box-shadow: 0 8px 5px rgba(0,0,0,.25);
+	-moz-box-shadow: 0 8px 5px rgba(0,0,0,.25);
+	box-shadow: 0 8px 5px rgba(0,0,0,.25);
+
+  .navbar-collapse {
+  	height: 90px !important;
+
+  	.navbar-right, .navbar-right * {
+  		height: 100%;
+  	}
+
+  	a {
+		  min-width: 60px;
+
+	  	&:hover:after {
+		    width: 100%;
+			  height: 5px;
+			  padding: 0 15px;
+			  position: relative;
+			  top: 10px;
+			  display: block;
+			  background-color: #FFF;
+			  content: "";
+	  	}
+  	}
+  }
+}
