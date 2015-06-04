@@ -1,3 +1,7 @@
+body * {
+	font: 14px "Roboto";
+}
+
 .main-menu {
 	height: 100%;
 }
@@ -6,14 +10,26 @@
 	margin-top: 10px;
 }
 
+main {
+	.btn.btn-info {
+	  background-color: #00bcd4 !important;
+	  color: #FFF !important;
+	}
+}
+
 footer {
-	.block {
+	.informations {
 		height: 240px;
 		background: #00bcd4;
 	}
 
 	.copyright {
 		height: 60px;
-		background: #FFF;
+
+		p {
+			color: #00bcd4;
+		  text-align: center;
+		  padding-top: 23px;
+		}
 	}
 }
