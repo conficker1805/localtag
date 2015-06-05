@@ -1,11 +1,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "bootstrap-dialog";
+@import "font-awesome";
 
 // Material design
 @import "material-design/material-fullpalette.min";
 @import "material-design/ripples.min";
-@import "material-design/snackbar.min";
+//@import "material-design/snackbar.min";
 
 // Applications
 @import "applications/index";

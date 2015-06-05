@@ -1,5 +1,52 @@
 footer
 	.informations
+		.container
+			.row
+				.col-md-3.contacts
+					p.address 
+						i.fa.fa-home
+						| 493-497 Victoria St, Abbotsford VIC 3067, Australia
+					p.hotline
+						i.fa.fa-phone
+						| Hotline: +1300 362 955		
+					p.email
+						i.fa.fa-envelope-o
+						| Email: contact@localtag.com
+				.col-md-3.static-pages
+					li = link_to "Our Team",'javascript:'
+					li = link_to "Careers", 'javascript:'
+					li = link_to "Blog", 		'javascript:'
+					li = link_to "Press", 	'javascript:'
+					li = link_to "FAQ", 		'javascript:'
+				.col-md-3.social-wrap
+					= link_to 'javascript:', class: 'social facebook'
+						i.fa.fa-facebook
+					= link_to 'javascript:', class: 'social twitter'
+						i.fa.fa-twitter
+					= link_to 'javascript:', class: 'social linkedin'
+						i.fa.fa-linkedin
+					= link_to 'javascript:', class: 'social google'
+						i.fa.fa-google-plus
+					= link_to 'javascript:', class: 'social youtube'
+						i.fa.fa-youtube-play
+					= link_to 'javascript:', class: 'social vimeo'
+						i.fa.fa-vimeo-square
+				.col-md-3.subcribe-wrap
+					p.describe Subscribe our newsletter by filling your email address in the field below
+					.form-group
+  					= text_field_tag "email", '', class: "form-control floating-label", placeholder: 'Email address'
+  				.controls
+  					= link_to 'Subscribe', 'javascript:', class: 'btn btn-default btn-raised'
+	  	.container
+	  		.row.nav-bottom-wrap
+	  			.nav-bottom
+		  			li = link_to "Home", 'javascript:'            
+		  			li = link_to "Services", 'javascript:'         
+		  			li = link_to "Education", 'javascript:'               
+		  			li = link_to "XChange", 'javascript:'            
+		  			li = link_to "Blog", 'javascript:'              
+		  			li = link_to "Let's Connect", 'javascript:'  
+  			
 
 	.copyright
 		p © 2015 Localtag All rights Reserved  |  Privacy Policy  |  Terms & Conditions

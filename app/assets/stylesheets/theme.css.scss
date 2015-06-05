@@ -1,5 +1,8 @@
 body * {
 	font: 14px "Roboto";
+	color: #FFF;
+	text-decoration: none;
+	list-style: none;
 }
 
 .main-menu {
@@ -11,16 +14,127 @@ body * {
 }
 
 main {
-	.btn.btn-info {
+	.btn.btn-info.btn-raised {
 	  background-color: #00bcd4 !important;
 	  color: #FFF !important;
+    height: 45px;
+		line-height: 30px;
+
+	  &:active, &:visited {
+	    opacity: 0.8;
+	  }
 	}
 }
 
 footer {
 	.informations {
-		height: 240px;
+		height: 260px;
+	  padding-top: 39px;
 		background: #00bcd4;
+
+		a, a:hover, a:active, a:visited {
+			color: #FFF;
+			text-decoration: none;
+		}
+
+		.contacts {
+			p {
+			  display: flex;
+				
+				i.fa {
+					margin-right: 10px;
+				  min-width: 14px;
+				}
+			}
+
+			.hotline {
+			  margin-top: 25px;
+		    margin-bottom: 6px;
+			}
+		}
+
+		.static-pages {
+		  padding-left: 90px;
+
+		  li {
+	  	  margin-bottom: 4px;
+		  }
+		}
+
+		.social-wrap {
+	    padding-right: 100px;
+
+			a.social {
+				height: 36px;
+			  width: 36px;
+		    margin-bottom: 20px;
+		    margin-right: 20px;
+			  display: inline-block;
+			  border: 2px solid #FFF;
+
+			  i.fa {
+		  	  font-size: 20px;
+				  margin: 6px auto;
+				  display: table;
+			  }
+			}
+		}
+
+		.subcribe-wrap {
+			p.describe {
+				line-height: 20px;
+			}
+
+			.form-control {
+				background-image: linear-gradient(#FFFFFF, #FFFFFF), linear-gradient(#FFFFFF, #FFFFFF);
+
+				&:focus ~ .floating-label {
+					color: #FFF;
+					padding-left: 0px;
+				}
+			}
+
+			.floating-label {
+				color: #FFF;
+				padding-left: 16px;
+				font-size: 12px;
+			}
+
+		}	
+
+		.controls {
+			text-align: right;
+		  padding-right: 15px;
+
+		  .btn {
+			  margin-top: 15px;
+		  }
+
+			.btn.btn-default.btn-raised {
+			  background-color: #FFF !important;
+			  color: #00a8cb !important;
+			}
+		}
+
+		.nav-bottom-wrap {
+			padding: 0 15px;
+			
+			.nav-bottom {
+			  border-top: 1px solid #FFF;
+			  margin-top: 12px;
+	      padding-top: 23px;
+		    text-align: center;
+
+			  li {
+		  	  display: inline;
+				  padding: 0 24px;
+
+				  a {
+				  	font-size: 16px;
+				  }
+			  }
+			}
+		}
 	}
 
 	.copyright {

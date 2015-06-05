@@ -40,6 +40,7 @@ gem 'devise'
 gem 'enumerize'
 gem 'simple_form'
 gem 'rails_admin'
+gem "font-awesome-rails"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

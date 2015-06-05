@@ -240,6 +240,7 @@ DEPENDENCIES
   dotenv-rails
   enumerize
   factory_girl_rails
+  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   pg
