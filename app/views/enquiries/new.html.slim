@@ -22,3 +22,29 @@
 					h2 Contact Us
 					p.describe 
 						| It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+	section.section-3
+		.google-map
+			iframe frameborder="0" height="100%" width="100%" scrolling="no" style="pointer-events:none" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyCQsVvFYEKKE6nTUFnrmozRp-Y1x30smVg&q=493-497 Victoria St, Abbotsford VIC 3067, Australia"
+			.new-enquiry-form-wrap
+				.container
+					.row
+						.col-md-4
+							.enquiry-form
+								= simple_form_for @enquiry, url: enquiries_path do |f|
+									.col-md-6
+										= f.input :first_name, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'First name'
+									.col-md-6
+										= f.input :last_name, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Last name'
+									.col-md-12
+										= f.input :email, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Email'
+									.col-md-12
+										= f.input :title, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Title'
+									.col-md-12
+										= f.input :description, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Description'
+									.col-md-12.controls
+										= link_to 'Submit', 'javascript:', class: 'btn btn-info btn-raised submit-now'
+
+
+javascript:
+	$(".place-card.place-card-large").css("display","none")
+
