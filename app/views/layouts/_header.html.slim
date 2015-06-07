@@ -1,18 +1,25 @@
-  .navbar.navbar-default
-    .container.main-menu
-      .navbar-header
-        button.navbar-toggle data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button" 
-          span.icon-bar
-          span.icon-bar
-          span.icon-bar
-        = link_to root_path, class: 'navbar-brand'
-          = image_tag "home/brand.png"
-      .navbar-collapse.collapse.navbar-responsive-collapse
-        ul.nav.navbar-nav.navbar-right
-          li = link_to  "Home", "javascript:"
-          li = link_to  "Services", "javascript:"
-          li = link_to  "Education", "javascript:"
-          li = link_to  "XChange", "javascript:"
-          li = link_to  "Blog", "javascript:"
-          li = link_to  "Let's Connect", "javascript:"
+.navbar.navbar-default
+  .container.main-menu
+    .navbar-header
+      button.navbar-toggle data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button" 
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      = link_to root_path, class: 'navbar-brand'
+        = image_tag "home/brand.png"
+    .navbar-collapse.collapse.navbar-responsive-collapse
+      ul.nav.navbar-nav.navbar-right
+        li = link_to  "Home", "javascript:"
+        li = link_to  "Services", "javascript:"
+        li = link_to  "Education", "javascript:"
+        li = link_to  "XChange", "javascript:"
+        li = link_to  "Blog", blogs_path
+        li = link_to  "Let's Connect", "javascript:"
+- unless is_home?
+  .banner-wrap
+    .container
+      .row
+        h1 Blog
+        hr
+        p.intro Contrary to popular belief, Lorem Ipsum is not simply random text.
 

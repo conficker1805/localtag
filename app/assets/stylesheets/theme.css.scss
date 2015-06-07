@@ -1,3 +1,27 @@
+header {
+	.banner-wrap {
+		min-height: 190px;
+	  padding-top: 22px;
+		background: image-url("share/banner.jpg");
+
+		.row {
+			padding: 0 15px;
+		}
+
+		h1 {
+			font-size: 36px;
+			font-weight: 100;
+		}
+
+		hr {
+			width: 350px;
+		  height: 1px;
+		  margin: 0 0 13px 0;
+		  background-color: #FFF;
+		}
+	}
+}
+
 body * {
 	font: 14px "Roboto";
 	color: #FFF;
@@ -62,7 +86,7 @@ footer {
 		}
 
 		.social-wrap {
-	    padding-right: 100px;
+	    padding-right: 50px;
 
 			a.social {
 				height: 36px;
@@ -147,3 +171,79 @@ footer {
 		}
 	}
 }
+
+
+.blog-box {
+	height: 350px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #fff;
+	-webkit-box-shadow: 0 2px 6px rgba(0,0,0,.25);
+	-moz-box-shadow: 0 2px 6px rgba(0,0,0,.25);
+	box-shadow: 0 2px 6px rgba(0,0,0,.25);
+
+	.blog-img-wrap {
+	  height: 200px;
+		position: relative;
+		
+		> img {
+			position: absolute;
+		  width: 100%;
+		  height: 100%;
+	    -webkit-border-top-left-radius: 3px;
+		  -webkit-border-top-right-radius: 3px;
+		  -moz-border-radius-topleft: 3px;
+		  -moz-border-radius-topright: 3px;
+		  border-top-left-radius: 3px;
+		  border-top-right-radius: 3px;
+		}
+
+		img.author {
+			position: absolute;
+		  width: 48px;
+		  height: 48px;
+		  border-radius: 50%;
+		  border: 1px solid #FFF;
+		  bottom: -23px;
+		  right: 10px;
+		}
+	}
+
+	.blog-brief {
+	  padding: 0 19px;
+
+		.category-name {
+		  margin-top: 14px;
+			font-weight: 400;
+			font-size: 12px;
+			color: #b6b6b6;
+		}
+
+		.blog-title {
+		  margin-top: 6px;
+			font-weight: 400;
+			font-size: 16px;
+			color: #212121;
+		}
+
+		.blog-intro {
+		  margin-top: 14px;
+			font-size: 14px;
+			color: #727272;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

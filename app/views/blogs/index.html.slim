@@ -1,0 +1,14 @@
+.blogs-index-container
+	.blogs-wrap
+		.container
+			.row
+				- (1..5).each do |f|
+					.col-md-4
+						.blog-box
+							.blog-img-wrap
+								= image_tag "home/section-1.jpg"
+								= image_tag "home/section-1.jpg", class: 'author'
+							.blog-brief
+								.category-name Music
+								.blog-title Music Instrument Collection
+								.blog-intro But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
