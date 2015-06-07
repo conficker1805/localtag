@@ -14,12 +14,11 @@
         li = link_to  "Education", "javascript:"
         li = link_to  "XChange", "javascript:"
         li = link_to  "Blog", blogs_path
-        li = link_to  "Let's Connect", "javascript:"
+        li = link_to  "Let's Connect", new_enquiry_path
 - unless is_home?
   .banner-wrap
     .container
       .row
-        h1 Blog
+        h1 = page_title
         hr
-        p.intro Contrary to popular belief, Lorem Ipsum is not simply random text.
-
+        p.intro = page_intro

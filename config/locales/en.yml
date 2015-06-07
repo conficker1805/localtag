@@ -21,3 +21,17 @@
 
 en:
   hello: "Hello world"
+
+  page-title:
+    blogs:
+      index: "BLOG"
+
+    enquiries:
+      new: 'LET’S CONNECT'
+
+  page-intro:
+    blogs:
+      index: "Contrary to popular belief, Lorem Ipsum is not simply random text"
+
+    enquiries:
+      new: 'Lorem Ipsum is not simply random text'
