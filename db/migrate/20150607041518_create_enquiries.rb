@@ -5,7 +5,7 @@ class CreateEnquiries < ActiveRecord::Migration
     	t.string :last_name
     	t.string :email
     	t.string :title
-    	t.text :description
+    	t.text :message
     end
   end
 end

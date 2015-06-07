@@ -37,7 +37,22 @@
 }
 
 
+.modal-dialog {
+  margin-top: 130px;
 
+  .modal-header {
+    padding: 14px 24px;
+    background-color: #00bcd4 !important;
+  }
+
+  .modal-body {
+    padding-top: 20px;
+
+    .bootstrap-dialog-message {
+      color: #010101;
+    }
+  }
+}
 
 
 

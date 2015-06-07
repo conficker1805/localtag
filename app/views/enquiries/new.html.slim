@@ -30,7 +30,7 @@
 					.row
 						.col-md-4
 							.enquiry-form
-								= simple_form_for @enquiry, url: enquiries_path do |f|
+								= simple_form_for @enquiry do |f|
 									.col-md-6
 										= f.input :first_name, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'First name'
 									.col-md-6
@@ -40,11 +40,12 @@
 									.col-md-12
 										= f.input :title, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Title'
 									.col-md-12
-										= f.input :description, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Description'
+										= f.input :message, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Description'
 									.col-md-12.controls
 										= link_to 'Submit', 'javascript:', class: 'btn btn-info btn-raised submit-now'
 
 
 javascript:
-	$(".place-card.place-card-large").css("display","none")
-
+	$("input, textarea").focus(function(){
+		$(this).closest(".field_with_errors").find(".error").remove()
+	});

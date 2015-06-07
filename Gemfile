@@ -66,5 +66,7 @@ group :development, :test do
 
   # Rails error page with a much better error
   gem 'better_errors'
+
+  gem 'letter_opener'
 end
 

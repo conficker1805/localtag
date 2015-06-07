@@ -28,6 +28,7 @@ en:
 
     enquiries:
       new: 'LET’S CONNECT'
+      create: 'LET’S CONNECT'
 
   page-intro:
     blogs:
@@ -35,3 +36,4 @@ en:
 
     enquiries:
       new: 'Lorem Ipsum is not simply random text'
+      create: 'Lorem Ipsum is not simply random text'

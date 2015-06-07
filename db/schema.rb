@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20150607041518) do
     t.string "last_name"
     t.string "email"
     t.string "title"
-    t.text   "description"
+    t.text   "message"
   end
 
 end
