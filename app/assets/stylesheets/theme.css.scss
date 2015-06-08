@@ -25,12 +25,16 @@ header {
 	}
 }
 
-body * {
-	font: 14px "Roboto";
-	color: #FFF;
-	text-decoration: none;
-	list-style: none;
-}
+body {
+	background-color: #FFF;
+
+	* {
+		font: 14px "Roboto";
+		color: #FFF;
+		text-decoration: none;
+		list-style: none;
+	}
+} 
 
 .main-menu {
 	height: 100%;

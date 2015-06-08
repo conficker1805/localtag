@@ -1,0 +1,28 @@
+.blogs-show-container
+	.container
+		.row
+			.col-md-8.col-md-offset-2
+				h1 = @blog.title
+				p.author = "Posted by #{ "Author" } , #{ @blog.created_at.strftime("%d %b %Y") }"
+				.content-wrap
+					= @blog.content
+				.about-author-wrap
+					.col-md-3.img-wrap
+						= image_tag "home/section-1.jpg"
+					.col-md-9
+						h2 ABOUT THE AUTHOR
+						p.describe
+							| Amina Qureshi is Senior Digital Manager at Localtag. She has worked as a journalist, in public relations, and social media and has carried out innovative digital campaigns for businesses and consumer brands around the world.
+						= link_to "View all posts by Amina Qureshi", "javascript:"
+				.related-post
+					h2 RELATED POST
+					- (1..2).each do |f|
+						.col-md-6
+							.blog-box
+								.blog-img-wrap
+									= image_tag "home/section-1.jpg"
+									= image_tag "home/section-1.jpg", class: 'author'
+								.blog-brief
+									.category-name Music
+									.blog-title Music Instrument Collection
+									.blog-intro But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
