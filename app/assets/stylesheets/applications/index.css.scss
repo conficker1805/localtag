@@ -1,6 +1,6 @@
 .application-index-container {
 	.section-1 {
-		height: 600px;
+		height: 100vh;
 		background: image-url("home/section-1.jpg");
 		background-size: cover;
 		display: inline-block;
@@ -13,19 +13,25 @@
 		  margin-top: 200px;
 		  width: 100%;
 		  text-align: center;
+
+		  top: 50%;
+		  position: relative;
+		  margin-top: -50px;
 		}
 
 		.btn-wrap {
 			width: 100%;
 			text-align: center;
 			margin-top: 22px;
+		  position: relative;
+		  top: 50%;
 		}
 	}
 
 	.section-2 {
 		height: 510px;
 		color: #FFF;
-		background: #0288d1;
+		background: #0085D4;
 
 		h2 {
 		  font-size: 48px;
