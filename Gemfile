@@ -37,6 +37,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Development
 gem 'slim'
 gem 'devise'
+gem "seedbank"
 gem 'enumerize'
 gem 'simple_form'
 gem 'rails_admin'

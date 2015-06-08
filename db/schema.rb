@@ -35,9 +35,12 @@ ActiveRecord::Schema.define(version: 20150607041518) do
   add_index "admins", ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true, using: :btree
 
   create_table "blogs", force: :cascade do |t|
-    t.string "title"
-    t.string "intro"
-    t.text   "content"
+    t.string   "title"
+    t.string   "intro"
+    t.text     "content"
+    t.integer  "category_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "categories", force: :cascade do |t|
