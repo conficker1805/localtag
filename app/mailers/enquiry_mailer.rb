@@ -3,7 +3,7 @@ class EnquiryMailer < ActionMailer::Base
     @enquiry = enquiry
     mail(
         from: Rails.application.secrets.admin_email,
-        to:   enquiry.email,
+        to:   @enquiry.email,
         subject: "[Local Tag] - Thank for your feedback!"
     )
   end
