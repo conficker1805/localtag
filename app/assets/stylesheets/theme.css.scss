@@ -34,6 +34,18 @@ body {
 		text-decoration: none;
 		list-style: none;
 	}
+
+	&.modal-open {
+		.navbar.navbar-default {
+		  position: static;
+		}
+
+		.section-1 {
+		  position: relative;
+		  top: -90px;
+		  z-index: -1;
+		}
+	}
 } 
 
 .main-menu {
