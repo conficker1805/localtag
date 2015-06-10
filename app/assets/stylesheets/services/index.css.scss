@@ -27,15 +27,19 @@
 	  	  	}
 
 	  	  	&:after {
-  	  		  content: '';
-					  border-top: 20px solid transparent;
-					  border-left: 20px solid transparent;
-					  border-bottom: 20px solid transparent;
-					  border-right: 20px solid #ECECEC;
+	  		    content: '';
+					  border-top: 15px solid transparent;
+					  border-left: 15px solid #ECECEC;
+					  border-bottom: 15px solid #ECECEC;
+					  border-right: 15px solid transparent;
 					  position: absolute;
-					  right: -30px;
+					  right: -60px;
 					  top: -10px;
+					  box-sizing: border-box;
 					  z-index: 99;
+					  box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.1);
+					  transform-origin: 0 0;
+					  transform: rotate(45deg);
 	  	  	}
 		  	}
 		  }
