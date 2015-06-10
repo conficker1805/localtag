@@ -1,12 +1,32 @@
 .services-index-container {
+	.list-menu {
+
+	}
+
+	.content-wrap {
+	  padding-left: 0;
+	  margin-left: -15px;
+	}
+}
+
+.services-index-container {
 	background: #dedede;
 
 	section.section-1 {
 		height: 290px;
+		background: rgba(222,222,222,1);
+		background: -moz-linear-gradient(left, rgba(222,222,222,1) 0%, rgba(236,236,236,1) 65%, rgba(236,236,236,1) 100%);
+		background: -webkit-gradient(left top, right top, color-stop(0%, rgba(222,222,222,1)), color-stop(65%, rgba(236,236,236,1)), color-stop(100%, rgba(236,236,236,1)));
+		background: -webkit-linear-gradient(left, rgba(222,222,222,1) 0%, rgba(236,236,236,1) 65%, rgba(236,236,236,1) 100%);
+		background: -o-linear-gradient(left, rgba(222,222,222,1) 0%, rgba(236,236,236,1) 65%, rgba(236,236,236,1) 100%);
+		background: -ms-linear-gradient(left, rgba(222,222,222,1) 0%, rgba(236,236,236,1) 65%, rgba(236,236,236,1) 100%);
+		background: linear-gradient(to right, rgba(222,222,222,1) 0%, rgba(236,236,236,1) 65%, rgba(236,236,236,1) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dedede', endColorstr='#ececec', GradientType=1 );
 
 		ul.list-menu {
 		  margin: 22px 0;
 		  padding: 0;
+	    cursor: default;
 
 		  > li {
 		  	color: #727272;
@@ -27,14 +47,14 @@
 	  	  	}
 
 	  	  	&:after {
-	  		    content: '';
-					  border-top: 15px solid transparent;
-					  border-left: 15px solid #ECECEC;
-					  border-bottom: 15px solid #ECECEC;
-					  border-right: 15px solid transparent;
+  		      content: '';
+					  border-top: 10px solid transparent;
+					  border-left: 10px solid #ECECEC;
+					  border-bottom: 10px solid #ECECEC;
+					  border-right: 10px solid transparent;
 					  position: absolute;
-					  right: -60px;
-					  top: -10px;
+					  right: -20px;
+					  top: -3px;
 					  box-sizing: border-box;
 					  z-index: 99;
 					  box-shadow: -2px 2px 3px 0 rgba(0, 0, 0, 0.1);
@@ -47,10 +67,44 @@
 
 		.content {
 			height: 290px;
+		  padding: 0 30px;
 			background-color: #ececec;
-			-webkit-box-shadow: 0 2px 6px rgba(0,0,0,.25);
-			-moz-box-shadow: 0 2px 6px rgba(0,0,0,.25);
-			box-shadow: 0 2px 6px rgba(0,0,0,.25);
+			-webkit-box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.1);
+			-moz-box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.1);
+			box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.1);
+
+			p.title {
+		    margin-top: 43px;
+				font-size: 18px;
+				color: #727272;
+			  font-weight: 300;
+			  display: inline-block;
+			}
+
+			hr.break {
+			  margin: 5px 0 0 0;
+				background: #dedede;
+			}
+
+			.description-box {
+				color: #212121;
+			  padding: 20px;
+				line-height: 21px;
+				height: 160px;
+			  margin-top: 20px;
+				-webkit-border-radius: 2px;
+				-moz-border-radius: 2px;
+				border-radius: 2px;
+				background-color: #f1f5f7;
+				-webkit-box-shadow: 0 2px 6px rgba(0,0,0,.25);
+				-moz-box-shadow: 0 2px 6px rgba(0,0,0,.25);
+				box-shadow: 0 2px 6px rgba(0,0,0,.25);
+
+				p {
+					color: #212121;
+				}
+			}
+
 		}
 	}
 
