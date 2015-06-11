@@ -27,6 +27,8 @@ header {
 
 body {
 	background-color: #FFF;
+	overflow: hidden;
+	position: relative;
 
 	* {
 		font: 14px "Roboto";

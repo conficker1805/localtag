@@ -1,0 +1,11 @@
+.fly-box {
+	margin-top: 50px;
+  display: inline-block;
+  opacity: 0;
+
+  &:first-child {
+  	margin-top: 0;
+	  display: inline-block;
+	  opacity: 1;
+  }
+}

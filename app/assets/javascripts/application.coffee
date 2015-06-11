@@ -11,3 +11,6 @@
 #= require material-design/ripples.min
 #= require material-design/snackbar.min
 #= require material-design/jquery.nouislider.min
+
+#--Smooth scroll--#
+#= require smooth-scroll/smooth-scroll
