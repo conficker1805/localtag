@@ -1,3 +1,22 @@
+body {
+	overflow: hidden;
+}
+
+main, footer {
+
+  transition: all 1000ms ease;
+  -webkit-transition: all 1000ms ease;
+
+  -moz-transform: 		translate(0,0px);
+  -ms-transform: 			translate(0,0px);
+  -webkit-transform: 	translate(0,0px);
+  transform: 					translate(0,0px);
+  -moz-transform: 		translate3d(0,0px,0);
+  -ms-transform: 			translate3d(0,0px,0);
+  -webkit-transform: 	translate3d(0,0px,0);
+  transform: 					translate3d(0,0px,0);
+}
+
 .fly-box {
 	margin-top: 50px;
   display: inline-block;
