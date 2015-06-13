@@ -69,7 +69,7 @@ $(document).ready(function(){
 
 					$('#scrollTo').attr('data-next', new_position)
 				}
-			}, 1300)
+			}, 1100)
 		}
 
 	}

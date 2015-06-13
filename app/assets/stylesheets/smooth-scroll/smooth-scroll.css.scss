@@ -3,10 +3,6 @@ body {
 }
 
 main, footer {
-
-  transition: all 1000ms ease;
-  -webkit-transition: all 1000ms ease;
-
   -moz-transform: 		translate(0,0px);
   -ms-transform: 			translate(0,0px);
   -webkit-transform: 	translate(0,0px);
@@ -15,6 +11,18 @@ main, footer {
   -ms-transform: 			translate3d(0,0px,0);
   -webkit-transform: 	translate3d(0,0px,0);
   transform: 					translate3d(0,0px,0);
+
+  -webkit-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1); /* older webkit */
+  -webkit-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005); 
+     -moz-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005); 
+       -o-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005); 
+          transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
+
+  -webkit-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1); /* older webkit */
+  -webkit-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005); 
+     -moz-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005); 
+       -o-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005); 
+          transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005);
 }
 
 .fly-box {
