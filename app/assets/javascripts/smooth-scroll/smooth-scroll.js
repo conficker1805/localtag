@@ -7,11 +7,8 @@ $(document).ready(function(){
 	// Initialize flag (keep params to scroll)
 	//$('#scrollTo').attr({'data-prev': '0', 'data-curr': '0', 'data-next': '-' + next_node, })
 	var sections = $(".section");
-	var temp = 1
 
 	sections.each(function() {
-		$(this).attr('data-scroll', temp);
-
 		// Determine next position
 		if ($(this).next().length > 0) 
 			$(this).attr('data-next', '-' + ($(this).next().offset().top - height_main_menu)) 
@@ -22,8 +19,6 @@ $(document).ready(function(){
 
 		// Determine previous position
 		$(this).attr('data-prev', '-' + ($(this).offset().top - height_main_menu))
-
-		temp++;
 	});
 
 	sections.first().addClass('active').attr('data-prev', 0)
@@ -50,8 +45,7 @@ $(document).ready(function(){
 
 			var variable = current.attr('data-next')
 
-			disable_scroll()
-			$('.banner-wrap, main, footer').css({ '-moz-transform': 'translate(0, ' + variable + 'px)', '-ms-transform': 'translate(0, ' + variable + 'px)', '-webkit-transform': 'translate(0, ' + variable + 'px)', 'transform': 'translate(0, ' + variable + 'px)', '-moz-transform': 'translate3d(0, ' + variable + 'px, 0)', '-ms-transform': 'translate3d(0, ' + variable + 'px, 0)', '-webkit-transform': 	'translate3d(0, ' + variable + 'px, 0)', 'transform': 'translate3d(0, ' + variable + 'px, 0)',});
+			run_animate(variable)
 		}
 	}
 
@@ -72,12 +66,10 @@ $(document).ready(function(){
 			$('.section').last().addClass('active')
 		}
 
-		disable_scroll()
-		$('.banner-wrap, main, footer').css({ '-moz-transform': 'translate(0, ' + variable + 'px)', '-ms-transform': 'translate(0, ' + variable + 'px)', '-webkit-transform': 'translate(0, ' + variable + 'px)', 'transform': 'translate(0, ' + variable + 'px)', '-moz-transform': 'translate3d(0, ' + variable + 'px, 0)', '-ms-transform': 'translate3d(0, ' + variable + 'px, 0)', '-webkit-transform': 	'translate3d(0, ' + variable + 'px, 0)', 'transform': 'translate3d(0, ' + variable + 'px, 0)',});
-
+		run_animate(variable)
 	}
 
-	function disable_scroll(){
+	function run_animate(variable){
 		$('#next').unbind('click')
 		$('#prev').unbind('click')
 
@@ -85,6 +77,8 @@ $(document).ready(function(){
 			$('#next').bind('click', next) 
 			$('#prev').bind('click', prev) 
 		}, 1100)
+
+		$('.banner-wrap, main, footer').css({ '-moz-transform': 'translate(0, ' + variable + 'px)', '-ms-transform': 'translate(0, ' + variable + 'px)', '-webkit-transform': 'translate(0, ' + variable + 'px)', 'transform': 'translate(0, ' + variable + 'px)', '-moz-transform': 'translate3d(0, ' + variable + 'px, 0)', '-ms-transform': 'translate3d(0, ' + variable + 'px, 0)', '-webkit-transform': 	'translate3d(0, ' + variable + 'px, 0)', 'transform': 'translate3d(0, ' + variable + 'px, 0)',});
 	}
 
 	function update_active_section(current, direction) {

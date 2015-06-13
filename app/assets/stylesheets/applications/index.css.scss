@@ -91,6 +91,10 @@
 				min-height: 59px;
 				background: #FFF;
 				border-bottom: 1px solid #e5e5e5;
+
+				&:last-child {
+					border-bottom: 0;
+				}
 			}
 		}
 

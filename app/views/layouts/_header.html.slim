@@ -1,4 +1,5 @@
-= text_field_tag 'scrollTo', '', class: 'hide'
+#next
+#prev
 .navbar.navbar-default
   .container.main-menu
     .navbar-header
@@ -10,10 +11,10 @@
         = image_tag "home/brand.png"
     .navbar-collapse.collapse.navbar-responsive-collapse
       ul.nav.navbar-nav.navbar-right
-        li = link_to  "Home", "javascript:"
+        li = link_to  "Home", root_path
         li = link_to  "Services", services_path
-        li = link_to  "Education", "javascript:", id: 'prev'
-        li = link_to  "XChange", "javascript:", id: 'next'
+        li = link_to  "Education", "javascript:"
+        li = link_to  "XChange", "javascript:"
         li = link_to  "Blog", blogs_path
         li = link_to  "Let's Connect", new_enquiry_path
 - unless is_home?
