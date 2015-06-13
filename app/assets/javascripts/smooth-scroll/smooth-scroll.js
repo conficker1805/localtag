@@ -3,10 +3,31 @@
 $(document).ready(function(){
 	// Set variables
 	var height_main_menu = $('header .navbar').height()
-	var next_node = $('section[data-scroll].next').offset().top - height_main_menu
-	var total = $('section[data-scroll]').size
+
 	// Initialize flag (keep params to scroll)
-	$('#scrollTo').attr({'data-prev': '0', 'data-curr': '0', 'data-next': '-' + next_node, })
+	//$('#scrollTo').attr({'data-prev': '0', 'data-curr': '0', 'data-next': '-' + next_node, })
+	var sections = $(".section");
+	var temp = 1
+
+	sections.each(function() {
+		$(this).attr('data-scroll', temp);
+
+		// Determine next position
+		if ($(this).next().length > 0) 
+			$(this).attr('data-next', '-' + ($(this).next().offset().top - height_main_menu)) 
+		else {
+			var scroll_to_footer = $(this).prev().attr('data-next') - $('footer').height() + $(window).height() - $(this).height() - height_main_menu
+			$(this).attr('data-next', scroll_to_footer)	// Last section scroll to footer
+		}
+
+		// Determine previous position
+		$(this).attr('data-prev', '-' + ($(this).offset().top - height_main_menu))
+
+		temp++;
+	});
+
+	sections.first().addClass('active').attr('data-prev', 0)
+
 
 	// Set event scroll down
 	$('#next').click(function(){
@@ -14,64 +35,70 @@ $(document).ready(function(){
 	});
 
 	// Set event scroll up
+
 	$('#prev').click(function(){
-		var val_b = '0'
-		$('main, footer').css({
-			'-moz-transform': 		'translate(0, ' + val_b + ')',
-		  '-ms-transform': 			'translate(0, ' + val_b + ')',
-		  '-webkit-transform': 	'translate(0, ' + val_b + ')',
-		  'transform': 					'translate(0, ' + val_b + ')',
-		  '-moz-transform': 		'translate3d(0, ' + val_b + ', 0)',
-		  '-ms-transform': 			'translate3d(0, ' + val_b + ', 0)',
-		  '-webkit-transform': 	'translate3d(0, ' + val_b + ', 0)',
-		  'transform': 					'translate3d(0, ' + val_b + ', 0)',
-		});
+		prev()
 	});
 
 
-
-
-
-
-
-
-
-
-
-
 	function next() {
-		if (($('section.prev').length > 0) && $('section.next').length <= 0) {
-			// It is last section then scroll to footer
-			var variable = $('#scrollTo').attr('data-next') - $('footer').height() + $(window).height() - $('section').last().height() - height_main_menu
-			$('main, footer').css({ '-moz-transform': 'translate(0, ' + variable + 'px)', '-ms-transform': 'translate(0, ' + variable + 'px)', '-webkit-transform': 'translate(0, ' + variable + 'px)', 'transform': 'translate(0, ' + variable + 'px)', '-moz-transform': 'translate3d(0, ' + variable + 'px, 0)', '-ms-transform': 'translate3d(0, ' + variable + 'px, 0)', '-webkit-transform': 	'translate3d(0, ' + variable + 'px, 0)', 'transform': 'translate3d(0, ' + variable + 'px, 0)',});
-			return
+		if (!$('.section').hasClass('active')) {
+			return	// You are staying at footer
 		}else {
-			$('#next').unbind('click')
-			//$('#prev').unbind('click')
-			
-			var variable = $('#scrollTo').attr('data-next')
+			var current = $('.section.active')
+			update_active_section(current, true)	// true = scroll down
 
+			var variable = current.attr('data-next')
+
+			disable_scroll()
 			$('main, footer').css({ '-moz-transform': 'translate(0, ' + variable + 'px)', '-ms-transform': 'translate(0, ' + variable + 'px)', '-webkit-transform': 'translate(0, ' + variable + 'px)', 'transform': 'translate(0, ' + variable + 'px)', '-moz-transform': 'translate3d(0, ' + variable + 'px, 0)', '-ms-transform': 'translate3d(0, ' + variable + 'px, 0)', '-webkit-transform': 	'translate3d(0, ' + variable + 'px, 0)', 'transform': 'translate3d(0, ' + variable + 'px, 0)',});
+		}
+	}
 
-			setTimeout(function(){ 
-				$('#next').bind('click', next) 
+	function prev() {
 
-				// Get position of next section
-				$('section').removeClass('prev')
-				var current = $('section[data-scroll].next')
-				current.removeClass('next')
-				current.prev().addClass('prev')
-				if (current.next().length) {
-					current.next().addClass('next')
+		if ($('.section').hasClass('active') && $('.section.active').prev().length == 0) {
+			return
+		}
+		else if ($('.section').hasClass('active')) {
+			var current = $('.section.active')
 
-					// Set flag
-					var new_position = $('#scrollTo').attr('data-next') - $('section[data-scroll].next').offset().top + height_main_menu
+			update_active_section(current, false) // false = scroll up
 
-					$('#scrollTo').attr('data-next', new_position)
-				}
-			}, 1100)
+			var variable = current.prev().attr('data-prev')
+
+		}else {
+			var variable = $('.section').last().prev().attr('data-next')
+			$('.section').last().addClass('active')
 		}
 
+		disable_scroll()
+		$('main, footer').css({ '-moz-transform': 'translate(0, ' + variable + 'px)', '-ms-transform': 'translate(0, ' + variable + 'px)', '-webkit-transform': 'translate(0, ' + variable + 'px)', 'transform': 'translate(0, ' + variable + 'px)', '-moz-transform': 'translate3d(0, ' + variable + 'px, 0)', '-ms-transform': 'translate3d(0, ' + variable + 'px, 0)', '-webkit-transform': 	'translate3d(0, ' + variable + 'px, 0)', 'transform': 'translate3d(0, ' + variable + 'px, 0)',});
+
+	}
+
+	function disable_scroll(){
+		$('#next').unbind('click')
+		$('#prev').unbind('click')
+
+		setTimeout(function(){ 
+			$('#next').bind('click', next) 
+			$('#prev').bind('click', prev) 
+		}, 1100)
+	}
+
+	function update_active_section(current, direction) {
+		if (direction) {
+			var has_next_node = $(current).next().length > 0 ? true : false
+			if (has_next_node)
+				$(current).next().addClass('active')
+		}else {
+			var has_prev_node = $(current).prev().length > 0 ? true : false
+			if (has_prev_node)
+				$(current).prev().addClass('active')
+		}
+
+		$(current).removeClass('active')
 	}
 
 
@@ -86,9 +113,21 @@ $(document).ready(function(){
 
 
 
-	$(window).on('mousewheel DOMMouseScroll', function (e) { 
-	  var scrollable = !$('html,body').is(':animated')
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+	$(window).on('mousewheel DOMMouseScroll', function (e) { 
 
 		// Check direction
 	  var direction = (function () {
@@ -104,7 +143,6 @@ $(document).ready(function(){
 	  	$('#next').trigger('click')
 	  }else {
 	  	$('#prev').trigger('click')
-		}
-	  
+		}  
 	});
 });
