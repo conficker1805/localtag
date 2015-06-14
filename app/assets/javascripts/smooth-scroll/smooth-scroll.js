@@ -1,28 +1,5 @@
-
-
 $(document).ready(function(){
-	// Set variables
-	var height_main_menu = $('header .navbar').height()
-
-	// Initialize flag (keep params to scroll)
-	//$('#scrollTo').attr({'data-prev': '0', 'data-curr': '0', 'data-next': '-' + next_node, })
-	var sections = $(".section");
-
-	sections.each(function() {
-		// Determine next position
-		if ($(this).next().length > 0) 
-			$(this).attr('data-next', '-' + ($(this).next().offset().top - height_main_menu)) 
-		else {
-			var scroll_to_footer = $(this).prev().attr('data-next') - $('footer').height() + $(window).height() - $(this).height() - height_main_menu
-			$(this).attr('data-next', scroll_to_footer)	// Last section scroll to footer
-		}
-
-		// Determine previous position
-		$(this).attr('data-prev', '-' + ($(this).offset().top - height_main_menu))
-	});
-
-	sections.first().addClass('active').attr('data-prev', 0)
-
+	init_scroll()
 
 	// Set event scroll down
 	$('#next').click(function(){
@@ -30,15 +7,17 @@ $(document).ready(function(){
 	});
 
 	// Set event scroll up
-
 	$('#prev').click(function(){
 		prev()
 	});
 
 
 	function next() {
-		if (!$('.section').hasClass('active')) {
-			return	// You are staying at footer
+		staying_footer = !$('.section').hasClass('active');
+		staying_pause_section = $('.active').hasClass('pause');
+
+		if (staying_footer || staying_pause_section) {
+			return
 		}else {
 			var current = $('.section.active')
 			update_active_section(current, true)	// true = scroll down
@@ -95,48 +74,33 @@ $(document).ready(function(){
 		$(current).removeClass('active')
 	}
 
+	function init_scroll() {
+		var height_main_menu = $('header .navbar').height()
+		var sections = $(".section");
 
+		sections.each(function() {
+			// Determine next position
+			if ($(this).next().length > 0) 
+				$(this).attr('data-next', '-' + ($(this).next().offset().top - height_main_menu)) 
+			else {
+				var scroll_to_footer = $(this).prev().attr('data-next') - $('footer').height() + $(window).height() - $(this).height() - height_main_menu
+				$(this).attr('data-next', scroll_to_footer)	// Last section scroll to footer
+			}
 
+			// Determine previous position
+			$(this).attr('data-prev', '-' + ($(this).offset().top - height_main_menu))
+		});
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		sections.first().addClass('active').attr('data-prev', 0)
+	}
 
 	$(window).on('mousewheel DOMMouseScroll', function (e) { 
-
 		// Check direction
 	  var direction = (function () {
-	      var delta = (e.type === 'DOMMouseScroll' ?
-	                   e.originalEvent.detail * -40 :
-	                   e.originalEvent.wheelDelta);
+      var delta = (e.type === 'DOMMouseScroll' ? e.originalEvent.detail * -40 : e.originalEvent.wheelDelta);
+      return delta > 0 ? '#next' : '#prev';
+    }());
 
-	      return delta > 0 ? true : false;
-	    }());
-
-
-	  if (direction) {
-	  	$('#next').trigger('click')
-	  }else {
-	  	$('#prev').trigger('click')
-		}  
+		$(direction).trigger('click')
 	});
 });
