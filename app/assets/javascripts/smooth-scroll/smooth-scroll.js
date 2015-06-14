@@ -14,9 +14,9 @@ $(document).ready(function(){
 
 	function next() {
 		staying_footer = !$('.section').hasClass('active');
-		staying_pause_section = $('.active').hasClass('pause');
+		staying_stop_section = $('.active').hasClass('stop');
 
-		if (staying_footer || staying_pause_section) {
+		if (staying_footer || staying_stop_section) {
 			return
 		}else {
 			var current = $('.section.active')
@@ -63,11 +63,11 @@ $(document).ready(function(){
 
 	function update_active_section(current, direction) {
 		if (direction) {
-			var has_next_node = $(current).next().length > 0 ? true : false
+			var has_next_node = $(current).next().length > 0 ? true : false;
 			if (has_next_node)
 				$(current).next().addClass('active')
 		}else {
-			var has_prev_node = $(current).prev().length > 0 ? true : false
+			var has_prev_node = $(current).prev().length > 0 ? true : false;
 			if (has_prev_node)
 				$(current).prev().addClass('active')
 		}
@@ -76,32 +76,36 @@ $(document).ready(function(){
 	}
 
 	function init_scroll() {
-		var height_main_menu = $('header .navbar').height()
+		var height_main_menu = $('header .navbar').height();
 		var sections = $(".section");
 
 		sections.each(function() {
 			// Determine next position
 			if ($(this).next().length > 0) 
-				$(this).attr('data-next', '-' + ($(this).next().offset().top - height_main_menu)) 
+				$(this).attr('data-next', '-' + ($(this).next().offset().top - height_main_menu));
 			else {
-				var scroll_to_footer = $(this).prev().attr('data-next') - $('footer').height() + $(window).height() - $(this).height() - height_main_menu
-				$(this).attr('data-next', scroll_to_footer)	// Last section scroll to footer
+				var scroll_to_footer = $(this).prev().attr('data-next') - $('footer').height() + $(window).height() - $(this).height() - height_main_menu;
+				$(this).attr('data-next', scroll_to_footer);	// Last section scroll to footer
 			}
 
 			// Determine previous position
-			$(this).attr('data-prev', '-' + ($(this).offset().top - height_main_menu))
+			$(this).attr('data-prev', '-' + ($(this).offset().top - height_main_menu));
 		});
 
-		sections.first().addClass('active').attr('data-prev', 0)
+		sections.first().addClass('active').attr('data-prev', 0);
 	}
 
 	$(window).on('mousewheel DOMMouseScroll', function (e) { 
 		// Check direction
 	  var direction = (function () {
       var delta = (e.type === 'DOMMouseScroll' ? e.originalEvent.detail * -40 : e.originalEvent.wheelDelta);
-      return delta > 0 ? '#next' : '#prev';
+      return delta > 0 ? 'next' : 'prev';
     }());
 
-		$(direction).trigger('click')
+		if ($(document).find('.services-index-container').length) {
+			services_scroll(direction);
+		}
+
+		$('#' + direction).trigger('click')
 	});
 });

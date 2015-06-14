@@ -88,22 +88,22 @@ body {
     $height: -261px;
 
     &:nth-child(1) { 
-      @include transform-translate($height * 0 + 60px);
+      @include transform-translate($height * 0 + 50px);
       &.active { @include transform-translate($height * 0); }
     }
 
     &:nth-child(2) { 
-      @include transform-translate($height * 1 + 60px); 
+      @include transform-translate($height * 1 + 50px); 
       &.active { @include transform-translate($height * 1); }
     }
 
     &:nth-child(3) { 
-      @include transform-translate($height * 2 + 60px); 
+      @include transform-translate($height * 2 + 50px); 
       &.active { @include transform-translate($height * 2); }
     }
 
     &:nth-child(4) { 
-      @include transform-translate($height * 3 + 60px); 
+      @include transform-translate($height * 3 + 50px); 
       &.active { @include transform-translate($height * 3); }
     }
     

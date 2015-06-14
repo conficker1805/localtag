@@ -13,4 +13,5 @@
 #= require material-design/jquery.nouislider.min
 
 #--Smooth scroll--#
+#= require smooth-scroll/services-index-container
 #= require smooth-scroll/smooth-scroll
