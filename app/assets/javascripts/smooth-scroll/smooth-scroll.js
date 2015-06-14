@@ -3,12 +3,12 @@ $(document).ready(function(){
 
 	// Set event scroll down
 	$('#next').click(function(){
-		next()
+		next();
 	});
 
 	// Set event scroll up
 	$('#prev').click(function(){
-		prev()
+		prev();
 	});
 
 
@@ -29,8 +29,9 @@ $(document).ready(function(){
 	}
 
 	function prev() {
+		var is_first_section = $('.section').first().hasClass('active')
 
-		if ($('.section').hasClass('active') && $('.section.active').prev().length == 0) {
+		if (is_first_section) {
 			return
 		}
 		else if ($('.section').hasClass('active')) {

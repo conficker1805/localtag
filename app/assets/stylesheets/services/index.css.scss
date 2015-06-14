@@ -73,11 +73,6 @@
 			-moz-box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.1);
 			box-shadow: -2px 2px 3px 0px rgba(0, 0, 0, 0.1);
 
-			.fly-box:first-child {
-			  opacity: 1;
-			  @include transform-translate(0px);
-			}
-
 			p.title {
 		    margin-top: 43px;
 				font-size: 18px;
