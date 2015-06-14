@@ -17,6 +17,10 @@
 @import "theme";
 @import "overwrite";
 
+// Layouts
+@import "layouts/_header";
+
+
 // Blogs
 @import "blogs/index";
 @import "blogs/show";
