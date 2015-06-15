@@ -3,7 +3,7 @@ title
 = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
 = stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Roboto:400,900italic,700italic,500italic,300,100,500,900,700,100italic,300italic,400italic' 	
 = javascript_include_tag 'application', 'data-turbolinks-track' => true
-= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false'
+= javascript_include_tag '//maps.googleapis.com/maps/api/js?sensor=false&key=#{ ENV["GOOGLE_MAP_API_KEY"] }'
 / link href="//fezvrasta.github.io/bootstrap-material-design/dist/css/material-fullpalette.min.css" rel="stylesheet" /
 / link href="//fezvrasta.github.io/bootstrap-material-design/dist/css/ripples.min.css" rel="stylesheet" /
 / link href="//fezvrasta.github.io/snackbarjs/dist/snackbar.min.css" rel="stylesheet" /
