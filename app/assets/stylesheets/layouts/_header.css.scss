@@ -1,37 +1,12 @@
 .page-wrap {
 	.navbar.navbar-default {
 		a.navbar-brand {
-			display: table;
-		}
-	}
+  		display: table;
+  	}
+  }
+}
 
-	@media (min-width: 768px) {
-		.navbar.navbar-default {
-			.main-menu {
-			  margin: 0 auto;
-				width: 750px;
-			}
-		}
-	}
-
-	@media (min-width: 992px) {
-		.navbar.navbar-default {
-			.main-menu {
-	  	  margin: 0 auto;
-	  	  width: 970px;
-			}
-		}
-	}
-
-	@media (min-width: 1200px) {
-		.navbar.navbar-default {
-			.main-menu {
-	  	  margin: 0 auto;
-			  width: 1140px;
-			}
-		}
-	}
-
+.page-wrap {
 	@media (max-width: 1200px) {
 		.navbar.navbar-default {
 			a.navbar-brand {
