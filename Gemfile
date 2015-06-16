@@ -42,6 +42,7 @@ gem 'enumerize'
 gem 'simple_form'
 gem 'rails_admin'
 gem "font-awesome-rails"
+gem 'cancancan', '~> 1.10'
 
 group :production do
   gem 'rails_12factor'

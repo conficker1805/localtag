@@ -9,7 +9,7 @@ RailsAdmin.config do |config|
   config.current_user_method(&:current_admin)
 
   ## == Cancan ==
-  # config.authorize_with :cancan
+  config.authorize_with :cancan
 
   ## == PaperTrail ==
   # config.audit_with :paper_trail, 'User', 'PaperTrail::Version' # PaperTrail >= 3.0.0
@@ -30,5 +30,6 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
+    # config.excluded_models = ['Enquiries']
   end
 end
