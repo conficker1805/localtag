@@ -54,4 +54,17 @@ Rails.application.configure do
       :authentication => :plain
   }
   ActionMailer::Base.delivery_method = :smtp
+
+  # S3 setup for Paperclip
+  config.paperclip_defaults = {
+      storage: :s3,
+      s3_protocol: 'http',
+      url: ":s3_domain_url",
+      path: "/development/:class/:attachment/:id_partition/:style/:filename",
+      s3_credentials: {
+          bucket: 'localtag',
+          access_key_id: ENV['AWS_ACCESS_KEY'],
+          secret_access_key: ENV['AWS_SECRET_KEY']
+      }
+  }
 end

@@ -44,6 +44,9 @@ gem 'rails_admin'
 gem "font-awesome-rails"
 gem 'cancancan', '~> 1.10'
 
+gem 'paperclip'
+gem 'aws-sdk', '< 2.0'
+
 group :production do
   gem 'rails_12factor'
 end
