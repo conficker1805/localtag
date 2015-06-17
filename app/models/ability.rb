@@ -8,7 +8,7 @@ class Ability
     can :access, :rails_admin   # grant access to rails_admin
     can :dashboard
 
-    case admin.role
+    case admin.permission
       when 'admin'
         can :access, :rails_admin 
         can :dashboard   

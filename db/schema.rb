@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20150617195409) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
-    t.string   "role",                   default: "author"
+    t.string   "permission",             default: "author"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

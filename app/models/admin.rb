@@ -5,5 +5,5 @@ class Admin < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :trackable, :validatable
 
-  enumerize :role, in: [:author, :admin], default: :author
+  enumerize :permission, in: [:author, :admin], default: :author
 end
