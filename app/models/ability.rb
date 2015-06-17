@@ -7,14 +7,16 @@ class Ability
 
     can :access, :rails_admin   # grant access to rails_admin
     can :dashboard
+    can :manage, :all
 
-    case admin.permission
-      when 'admin'
-        can :access, :rails_admin 
-        can :dashboard   
-        can :manage, :all
-      when 'author'
-        can :crud, Blog
-    end
+    # case admin.permission
+    #   when 'admin'
+    #     can :access, :rails_admin 
+    #     can :dashboard   
+    #     can :manage, :all
+    #   when 'author'
+    #     can :crud, Blog
+    # end
+
   end
 end

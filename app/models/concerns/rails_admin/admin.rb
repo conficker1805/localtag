@@ -6,7 +6,6 @@ module RailsAdmin::Admin
       edit do
         field :email
         field :password
-        field :permission
       end
     end
   end
