@@ -214,9 +214,33 @@
 		}
 	}
 }
-  // -webkit-border-top-left-radius: 2px;
-  // -webkit-border-top-right-radius: 2px;
-  // -moz-border-radius-topleft: 2px;
-  // -moz-border-radius-topright: 2px;
-  // border-top-left-radius: 2px;
-  // border-top-right-radius: 2px;
+
+.page-wrap {
+	.application-index-container {
+		@media (max-width: 767px) {
+			.section-2 {
+				img {
+					display: none;
+				}
+			}
+
+			.section-4 {
+				height: 100vh;
+
+				.service-wrap:last-child {
+					margin-top: 20px;
+				}
+			}
+
+			.section-5 {
+			  background-position-x: -550px;
+			}
+
+			.section-6 {
+				.localtag-box {
+					
+				}
+			}
+		}
+	}
+}
