@@ -31,12 +31,13 @@ footer
 						i.fa.fa-youtube-play
 					= link_to 'javascript:', class: 'social vimeo'
 						i.fa.fa-vimeo-square
-				.col-md-3.subcribe-wrap
-					p.describe Subscribe our newsletter by filling your email address in the field below
-					.form-group
-  					= text_field_tag "email", '', class: "form-control floating-label", placeholder: 'Email address'
-  				.controls
-  					= link_to 'Subscribe', 'javascript:', class: 'btn btn-default btn-raised'
+				= simple_form_for Subcribe.new do |f|
+					.col-md-3.subcribe-wrap
+						p.describe Subscribe our newsletter by filling your email address in the field below
+						.form-group
+							= f.input_field :email, class: "form-control floating-label", id: 'subcriber_email', placeholder: 'Email address'
+	  				.controls
+	  					= link_to 'Subscribe', 'javascript:', class: 'btn btn-default btn-raised submit-now'
 	  	.container
 	  		.row.nav-bottom-wrap
 	  			.nav-bottom
@@ -50,3 +51,8 @@ footer
 
 	.copyright
 		p © 2015 Localtag All rights Reserved  |  Privacy Policy  |  Terms & Conditions
+
+javascript:
+	$('.submit-now').click(function(){
+		$(this).closest('form').submit()
+	})

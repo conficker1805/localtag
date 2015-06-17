@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resources :blogs, only: [:index, :show]
   resources :enquiries, only: [:new, :create]
   resources :services, only: [:index]
+  resources :subcribes, only: [:create]
 
   # Example resource route with options:
   #   resources :products do
