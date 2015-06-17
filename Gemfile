@@ -37,11 +37,12 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Development
 gem 'slim'
 gem 'devise'
-gem "seedbank"
+gem 'ckeditor'
+gem 'seedbank'
 gem 'enumerize'
 gem 'simple_form'
 gem 'rails_admin'
-gem "font-awesome-rails"
+gem 'font-awesome-rails'
 gem 'cancancan', '~> 1.10'
 
 gem 'paperclip'

@@ -1,4 +1,5 @@
 class Blog < ActiveRecord::Base
+	include RailsAdmin::Blog
 	belongs_to :category
 
   validates :title, presence: true

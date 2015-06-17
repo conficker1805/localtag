@@ -4,6 +4,8 @@
 #= require bootstrap-sprockets
 #= require bootstrap-dialog
 
+#= require ckeditor/init
+
 
 #--Material design--#
 

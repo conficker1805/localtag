@@ -29,7 +29,7 @@ Rails.application.configure do
 
   # Asset digests allow you to set far-future HTTP expiration dates on all assets,
   # yet still be able to expire them through the digest params.
-  config.assets.digest = true
+  config.assets.digest = false
 
   # Adds additional error checking when serving assets at runtime.
   # Checks for improperly declared sprockets dependencies.
@@ -62,7 +62,7 @@ Rails.application.configure do
       url: ":s3_domain_url",
       path: "/development/:class/:attachment/:id_partition/:style/:filename",
       s3_credentials: {
-          bucket: 'localtag',
+          bucket: 'marine-central-live',
           access_key_id: ENV['AWS_ACCESS_KEY'],
           secret_access_key: ENV['AWS_SECRET_KEY']
       }

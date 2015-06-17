@@ -30,6 +30,6 @@ RailsAdmin.config do |config|
     ## With an audit adapter, you can add:
     # history_index
     # history_show
-    # config.excluded_models = ['Enquiries']
+    config.excluded_models = ['Ckeditor::Asset', 'Ckeditor::AttachmentFile', 'Ckeditor::Picture']
   end
 end
