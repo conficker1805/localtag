@@ -7,9 +7,9 @@ class CreateCategoriesAndBlogs < ActiveRecord::Migration
     end
 
     create_table :blogs do |t|
-    	t.string :title
-    	t.string :intro
-    	t.text :content
+    	t.string  :title
+    	t.string  :intro
+    	t.text    :content
         t.integer :category_id
 
     	t.timestamps
