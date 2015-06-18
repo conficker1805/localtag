@@ -7,10 +7,11 @@ class CreateCategoriesAndBlogs < ActiveRecord::Migration
     end
 
     create_table :blogs do |t|
-    	t.string  :title
-    	t.string  :intro
-    	t.text    :content
-        t.integer :category_id
+    	t.string     :title
+        t.attachment :cover_photo
+    	t.string     :intro
+    	t.text       :content
+        t.integer    :category_id
 
     	t.timestamps
     end

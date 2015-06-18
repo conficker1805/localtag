@@ -2,13 +2,14 @@
 	.blogs-wrap
 		.container
 			.row
-				- (1..5).each do |f|
+				- @blogs.each do |blog|
 					.col-md-4
 						.blog-box
 							.blog-img-wrap
-								= image_tag "home/section-1.jpg"
+								= link_to blog_path(blog.id)
+									= image_tag(blog.cover_photo, class: "cover")
 								= image_tag "home/section-1.jpg", class: 'author'
 							.blog-brief
-								.category-name Music
-								.blog-title Music Instrument Collection
-								.blog-intro But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account
+								.category-name = blog.category.title
+								.blog-title = blog.title
+								.blog-intro = blog.intro

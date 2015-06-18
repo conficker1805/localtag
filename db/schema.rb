@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20150618134924) do
 
   create_table "blogs", force: :cascade do |t|
     t.string   "title"
+    t.string   "cover_photo_file_name"
+    t.string   "cover_photo_content_type"
+    t.integer  "cover_photo_file_size"
+    t.datetime "cover_photo_updated_at"
     t.string   "intro"
     t.text     "content"
     t.integer  "category_id"
