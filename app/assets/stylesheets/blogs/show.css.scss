@@ -9,14 +9,17 @@
 	}
 
 	p.author {
+		margin-bottom: 28px;
 		color: #333333;
 		text-align: center;
 	}
 
 	.content-wrap {
-	  margin-top: 15px;
-		color: #333333;
-		line-height: 21px;
+		p, span {
+		  margin-top: 15px;
+			color: #333333;
+			line-height: 21px;
+		}
 	}
 
 	.about-author-wrap {

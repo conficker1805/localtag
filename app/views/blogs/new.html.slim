@@ -1,0 +1,14 @@
+.blogs-new-container
+	.container
+		.row
+			= simple_form_for @blog do |f|
+				.col-md-12
+					= f.input :title, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Title'
+				.col-md-12
+					= f.input :intro, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Intro'
+				.col-md-12
+					= f.cktext_area :content, input_html: { class: 'form-control floating-label' }, label: false
+				.col-md-12
+					= f.association :category, input_html: { class: 'form-control floating-label' }, label: false, include_blank: false, placeholder: 'Category'
+				.col-md-12
+					= f.submit

@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def smooth_scroll?
-  	disable_list = ["blogs/index", "blogs/show"]
+  	disable_list = ["blogs/index", "blogs/show", "blogs/new"]
   	"smooth_scroll" unless disable_list.include? "#{controller_name}/#{action_name}"
   end
 
