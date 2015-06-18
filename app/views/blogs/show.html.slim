@@ -2,10 +2,10 @@
 	.container
 		.row
 			.col-md-8.col-md-offset-2
-				h1 = @blog.title
+				h1 = @blog.title.html_safe
 				p.author = "Posted by #{ "Author" } , #{ @blog.created_at.strftime("%d %b %Y") }"
 				.content-wrap
-					= @blog.content
+					= @blog.content.html_safe
 				.about-author-wrap
 					.row.img-wrap
 						.col-md-3.img-wrap
