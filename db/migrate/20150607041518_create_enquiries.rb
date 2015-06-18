@@ -6,6 +6,8 @@ class CreateEnquiries < ActiveRecord::Migration
     	t.string :email
     	t.string :title
     	t.text :message
+
+    	t.timestamps
     end
   end
 end
