@@ -1,26 +1,27 @@
 doctype html
 html
-  head
-    = render 'layouts/declare'
+	head
+		= render 'layouts/declare'
 
-  body class="#{ smooth_scroll? }"
-  	.page-wrap
-  		header
-  			= render 'layouts/header'
+	body class="#{ smooth_scroll? }"
+		.page-wrap
+			header
+				= render 'layouts/header'
 
-  		main
-  			= yield
+			main
+				= yield
 
-        = render 'layouts/footer'
+			footer
+				= render 'layouts/footer'
 
 	= render 'layouts/flash_message'
 
 
 javascript:
-  $(function() {
-    $.material.init();
-    
-    $('.submit-now').click(function(){
-      $(this).closest('form').submit()
-    })
-  });
+	$(function() {
+		$.material.init();
+		
+		$('.submit-now').click(function(){
+			$(this).closest('form').submit()
+		})
+	});
