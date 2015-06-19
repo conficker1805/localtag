@@ -4,16 +4,38 @@
 #   Ensure the SQLite 3 gem is defined in your Gemfile
 #   gem 'sqlite3'
 #
-default: &default
-  adapter: postgresql
+# default: &default
+#   adapter: postgresql
+
+# development:
+#   <<: *default
+#   database: localtag_development
+
+# production:
+#   <<: *default
+#   database: localtag_production
+
+# # Warning: The database defined as "test" will be erased and
+# # re-generated from your development database when you run "rake".
+# # Do not set this db to the same as development or production.
+# test:
+#   <<: *default
+#   database: localtag_test
+
+
+
 
 development:
-  <<: *default
-  database: localtag_development
+ adapter: postgresql
+ database: localtag_development
+ host: localhost
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: localtag_test
+ adapter: postgresql
+ database: localtag_test
+ host: localhost
+
+production:
+ adapter: postgresql
+ database: localtag_production
+ host: localhost
