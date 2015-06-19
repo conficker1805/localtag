@@ -1,5 +1,6 @@
 class Blog < ActiveRecord::Base
 	include RailsAdmin::Blog
+
 	belongs_to :category
 	belongs_to :user
 

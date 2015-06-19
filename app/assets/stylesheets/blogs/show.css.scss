@@ -55,6 +55,8 @@
 		}
 
 		p.describe {
+		  height: 72px;
+		  overflow: hidden;
 			color: #333333;
 		  margin-top: 12px;
 		  line-height: 24px;
@@ -94,6 +96,12 @@
 
 	  .posts {
   	  margin-top: 11px;
+
+  	  .blog-title a {
+  	  	&:hover, &:active, &:visited {
+  	  		color: #212121;
+  	  	}
+  	  }
 	  }
 	}
 }

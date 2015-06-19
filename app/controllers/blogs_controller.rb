@@ -18,7 +18,8 @@ class BlogsController < ApplicationController
   end
 
   def show
-  	@blog = Blog.find(blog_id)
+  	@blog    = Blog.find(blog_id)
+    @relateds = Blog.where(category: @blog.category).limit(2)
   end
 
   protected

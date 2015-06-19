@@ -2,31 +2,31 @@
 	.container
 		.row
 			.col-md-8.col-md-offset-2
-				h1 = @blog.title.html_safe
-				p.author = "Posted by #{ "Author" } , #{ @blog.created_at.strftime("%d %b %Y") }"
+				h1 = @blog.title
+				p.author = "Posted by #{ @blog.user.name } , #{ @blog.created_at.strftime("%d %b %Y") }"
 				.content-wrap
 					= @blog.content.html_safe
 				.about-author-wrap
 					.row.img-wrap
 						.col-md-3.img-wrap
-							= image_tag "home/section-1.jpg"
+							= image_tag(@blog.user.avatar)
 						.col-md-8
 							h2 ABOUT THE AUTHOR
 							p.describe
-								| Amina Qureshi is Senior Digital Manager at Localtag. She has worked as a journalist, in public relations, and social media and has carried out innovative digital campaigns for businesses and consumer brands around the world.
+								= @blog.user.description
 							.link-posts
-								= link_to "View all posts by Amina Qureshi", "javascript:"
+								= link_to "View all posts by #{ @blog.user.name }", "javascript:"
 				.related-post
 					h2 RELATED POST
 					.row.posts
-						- Blog.all.each do |blog|
+						- @relateds.each do |blog|
 							.col-md-6
 								.blog-box
 									.blog-img-wrap
 										= link_to blog_path(blog.id)
 											= image_tag(blog.cover_photo, class: "cover")
-										= image_tag "home/section-1.jpg", class: 'author'
+										= image_tag(blog.user.avatar, class: 'author')
 									.blog-brief
 										.category-name = blog.category.title
-										.blog-title = blog.title
+										.blog-title = link_to blog.title, blog_path(blog.id)
 										.blog-intro = blog.intro
