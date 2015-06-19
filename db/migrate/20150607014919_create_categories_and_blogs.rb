@@ -11,7 +11,8 @@ class CreateCategoriesAndBlogs < ActiveRecord::Migration
         t.attachment :cover_photo
     	t.string     :intro
     	t.text       :content
-        t.integer    :category_id
+        t.references :category
+        t.references :user
 
     	t.timestamps
     end

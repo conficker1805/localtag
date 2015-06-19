@@ -4,7 +4,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string 		 :name
       t.attachment :avatar
       t.text 			 :description
-      t.string 		 :type, default: :author
+      t.string 		 :role, default: :author
 
       t.timestamps
     end

@@ -9,6 +9,7 @@ module RailsAdmin::Blog
         field :intro
         field :content, :ck_editor
         field :category
+        field :user
       end
     end
   end

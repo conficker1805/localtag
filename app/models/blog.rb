@@ -1,6 +1,7 @@
 class Blog < ActiveRecord::Base
 	include RailsAdmin::Blog
 	belongs_to :category
+	belongs_to :user
 
   validates :title, :content, :category_id, presence: true
   has_attached_file :cover_photo, :styles => { :medium => "300x300#", :thumb => "190x190#" } 

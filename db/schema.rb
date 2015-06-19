@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 20150618134924) do
     t.string   "intro"
     t.text     "content"
     t.integer  "category_id"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -92,7 +93,7 @@ ActiveRecord::Schema.define(version: 20150618134924) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.text     "description"
-    t.string   "type",                   default: "author"
+    t.string   "role",                   default: "author"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "email",                  default: "",       null: false

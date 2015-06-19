@@ -8,7 +8,8 @@ class BlogsController < ApplicationController
   end
 
   def create
-  	@blog = Blog.new(create_params)
+    @blog = current_user.blogs.new(create_params)
+    
     if @blog.save
       redirect_to root_path, notice: 'Create blog successfully'
     else

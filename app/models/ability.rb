@@ -1,7 +1,7 @@
 class Ability
   include CanCan::Ability
-  def initialize(admin)
-    admin ||= Admin.new
+  def initialize(user)
+    user ||= User.new
 
     alias_action :create, :read, :update, :destroy, :to => :crud
 
@@ -9,14 +9,13 @@ class Ability
     can :dashboard
     can :manage, :all
 
-    # case admin.permission
-    #   when 'admin'
-    #     can :access, :rails_admin 
-    #     can :dashboard   
-    #     can :manage, :all
-    #   when 'author'
-    #     can :crud, Blog
-    # end
-
+    case user.role
+      when 'admin'
+        can :access, :rails_admin 
+        can :dashboard   
+        can :manage, :all
+      when 'author'
+        can :edit, Blog, {user_id: user.id}
+    end
   end
 end
