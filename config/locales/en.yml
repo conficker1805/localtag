@@ -26,10 +26,12 @@ en:
     blogs:
       index: "BLOG"
       show: "BLOG"
+      new: "BLOG"
 
     enquiries:
       new: 'LET’S CONNECT'
       create: 'LET’S CONNECT'
+
     services:
       index: 'SERVICES'
 
@@ -37,6 +39,7 @@ en:
     blogs:
       index: "Contrary to popular belief, Lorem Ipsum is not simply random text"
       show: "Contrary to popular belief, Lorem Ipsum is not simply random text"
+      new: "Contrary to popular belief, Lorem Ipsum is not simply random text"
 
     enquiries:
       new: 'Lorem Ipsum is not simply random text'
