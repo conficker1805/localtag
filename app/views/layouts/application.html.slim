@@ -27,7 +27,12 @@ javascript:
 
 		setTimeout(function(){
 			$('.no-autocomplete').removeAttr('disabled')
+			
+		  if (WURFL.form_factor != 'Desktop') {
+		    $("body").removeClass('smooth_scroll')
+		  }
 	  }, 500);
+
 	});
 
 	

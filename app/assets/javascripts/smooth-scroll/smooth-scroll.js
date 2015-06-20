@@ -71,7 +71,6 @@ $(document).ready(function(){
 			if (has_prev_node)
 				$(current).prev().addClass('active')
 		}
-
 		$(current).removeClass('active')
 	}
 
