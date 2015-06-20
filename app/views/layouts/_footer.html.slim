@@ -1,7 +1,7 @@
 .informations
 	.container
 		.row
-			.col-md-3.col-xs-6.contacts
+			.col-md-3.col-sm-6.contacts
 				p.address 
 					i.fa.fa-home
 					| 493-497 Victoria St, Abbotsford VIC 3067, Australia
@@ -11,7 +11,7 @@
 				p.email
 					i.fa.fa-envelope-o
 					| Email: contact@localtag.com
-			.col-md-3.col-xs-6.static-pages
+			.col-md-3.col-sm-6.static-pages
 				li = link_to "Our Team",'javascript:'
 				li = link_to "Careers", 'javascript:'
 				li = link_to "Blog", 		'javascript:'
@@ -31,7 +31,7 @@
 				= link_to 'javascript:', class: 'social vimeo'
 					i.fa.fa-vimeo-square
 			= simple_form_for Subcribe.new do |f|
-				.col-md-3.col-xs-12.subcribe-wrap
+				.col-md-3.col-sm-6.col-xs-12.subcribe-wrap
 					p.describe Subscribe our newsletter by filling your email address in the field below
 					.form-group
 						= f.input_field :email, class: "form-control floating-label", id: 'subcriber_email', placeholder: 'Email address'

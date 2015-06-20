@@ -31,9 +31,8 @@ $(document).ready(function(){
 	function prev() {
 		var is_first_section = $('.section').first().hasClass('active')
 
-		if (is_first_section) {
+		if (is_first_section)
 			return
-		}
 		else if ($('.section').hasClass('active')) {
 			var current = $('.section.active')
 
