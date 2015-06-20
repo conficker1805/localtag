@@ -21,7 +21,6 @@
 @import "layouts/_header";
 @import "layouts/_footer";
 
-
 // Blogs
 @import "blogs/index";
 @import "blogs/show";
@@ -32,3 +31,6 @@
 
 // Services
 @import "services/index";
+
+// Session
+@import "sessions/new";

@@ -1,10 +1,16 @@
-h2
-  | Log in
-= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-  .form-inputs
-    = f.input :email, required: false, autofocus: true
-    = f.input :password, required: false
-    = f.input :remember_me, as: :boolean if devise_mapping.rememberable?
-  .form-actions
-    = f.button :submit, "Log in"
-= render "users/shared/links"
+.sessions-new-container
+	.container
+		.row
+			= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+				.col-sm-3.col-sm-offset-right-9.input-wrap
+					= f.input :email, input_html: { class: 'form-control floating-label no-autocomplete', disabled: "disabled" }, label: false, placeholder: 'Email'
+				.col-sm-3.col-sm-offset-right-9.input-wrap
+					= f.input :password, input_html: { class: 'form-control floating-label no-autocomplete', disabled: "disabled" }, label: false, placeholder: 'Password'
+				.col-sm-3.col-sm-offset-right-9.input-wrap
+					.checkbox
+						label
+							input type="checkbox" name="user[remember_me]" /
+							| Remember me
+				.col-xs-3.controls
+					= link_to 'Login', 'javascript:', class: 'btn btn-info btn-raised submit-now'
+			/= render "users/shared/links"

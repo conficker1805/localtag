@@ -12,3 +12,4 @@
 					= f.cktext_area :content, input_html: { class: 'form-control floating-label' }, label: false
 				.col-md-12.controls
 					= link_to 'Create', 'javascript:', class: 'btn btn-info btn-raised submit-now'
+					= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-raised submit-now'

@@ -35,6 +35,9 @@ en:
     services:
       index: 'SERVICES'
 
+    sessions:
+      new: 'LOGIN'
+
   page-intro:
     blogs:
       index: "Contrary to popular belief, Lorem Ipsum is not simply random text"
@@ -47,3 +50,6 @@ en:
 
     services:
       index: 'Lorem Ipsum is not simply random text'
+
+    sessions:
+      new: 'Lorem Ipsum is not simply random text'

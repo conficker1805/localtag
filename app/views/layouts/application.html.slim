@@ -22,6 +22,12 @@ javascript:
 		$.material.init();
 		
 		$('.submit-now').click(function(){
-			$(this).closest('form').submit()
+			$(this).closest('form').submit();
 		})
+
+		setTimeout(function(){
+			$('.no-autocomplete').removeAttr('disabled')
+	  }, 500);
 	});
+
+	

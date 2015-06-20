@@ -1,0 +1,33 @@
+.sessions-new-container {
+  .simple_form {
+
+  }
+  .checkbox {
+    label {
+      color: #808080;
+      
+      .check {
+        border: 2px solid #7E7E7E;
+        margin-right: 20px;
+      }
+    }
+
+    input[type=checkbox]:checked + .checkbox-material .check {
+      border: 2px solid #4CAF50;
+    }
+  }
+
+  .simple_form {
+    .input-wrap {
+      margin-top: 20px;
+    }
+
+    .controls {
+    	.btn-raised {
+    	  height: 36px;
+    	  margin-right: 30px;
+  			line-height: 20px;
+    	}
+    }
+  }
+}
