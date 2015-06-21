@@ -33,7 +33,7 @@ module Localtag
     config.active_record.raise_in_transactional_callbacks = true
     config.assets.precompile += %w( ckeditor/* )
     #config.assets.precompile += Ckeditor.assets
-    #config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
-    #config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+    config.autoload_paths += %W(#{config.root}/app/models/ckeditor)
+
   end
 end
