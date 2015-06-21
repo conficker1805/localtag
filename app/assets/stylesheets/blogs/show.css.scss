@@ -109,3 +109,29 @@
 	  }
 	}
 }
+
+.page-wrap .blogs-show-container {
+	@media (max-width: 1200px) {
+		.about-author-wrap {
+			.img-wrap > div {
+				padding-right: 40px;
+			}
+
+			.author-wrap {
+			  margin-left: -30px;
+			}
+		}
+	}
+
+	@media (max-width: 991px) {
+		.about-author-wrap {
+			.img-wrap > div {
+			  padding-right: 14px;
+			}
+
+			.author-wrap {
+			  margin-left: 0;
+			}
+		}
+	}
+}

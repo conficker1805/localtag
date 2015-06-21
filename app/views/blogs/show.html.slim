@@ -12,9 +12,9 @@
 					= @blog.content.html_safe
 				.about-author-wrap
 					.row.img-wrap
-						.col-md-3.img-wrap
+						.col-lg-3.col-md-4.col-sm-3.img-wrap
 							= image_tag(@blog.user.avatar)
-						.col-md-8
+						.col-md-8.col-lg-8.col-sm-9.author-wrap
 							h2 ABOUT THE AUTHOR
 							p.describe
 								= @blog.user.description
