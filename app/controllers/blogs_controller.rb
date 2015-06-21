@@ -10,7 +10,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = current_user.blogs.new(create_params)
+    @blog = current_user.blogs.new(blog_params)
     
     if @blog.save
       redirect_to root_path, notice: 'Create blog successfully'
@@ -19,9 +19,23 @@ class BlogsController < ApplicationController
     end
   end
 
+  def edit
+    @blog = Blog.find(blog_id)
+  end
+
+  def update
+    @blog = Blog.find(blog_id)
+
+    if @blog.update(blog_params)
+      redirect_to blog_path(@blog), notice: 'Update blog successfully'
+    else
+      render :edit
+    end
+  end
+
   def show
-  	@blog    = Blog.find(blog_id)
-    @relateds = Blog.where(category: @blog.category).limit(2)
+  	@blog     = Blog.find(blog_id)
+    @relateds = Blog.where(category: @blog.category).order("RANDOM()").limit(1)
   end
 
   protected
@@ -30,7 +44,7 @@ class BlogsController < ApplicationController
     params.require(:id)
   end
 
-  def create_params
+  def blog_params
   	params.require(:blog).permit(:title, :intro, :content, :category_id)
   end
 end

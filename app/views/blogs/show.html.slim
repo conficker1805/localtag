@@ -3,7 +3,11 @@
 		.row
 			.col-md-8.col-md-offset-2
 				h1 = @blog.title
-				p.author = "Posted by #{ @blog.user.name } , #{ @blog.created_at.strftime("%d %b %Y") }"
+				p.author
+					- if user_signed_in? && @blog.user == current_user
+						= link_to edit_blog_path(@blog)
+							i.fa.fa-pencil
+					= " Posted by #{ @blog.user.name }, #{ @blog.created_at.strftime("%d %b %Y") }"
 				.content-wrap
 					= @blog.content.html_safe
 				.about-author-wrap

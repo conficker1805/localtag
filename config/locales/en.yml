@@ -24,12 +24,13 @@ en:
 
   page-title:
     blogs:
-      index: "BLOG"
-      show: "BLOG"
-      new: "BLOG"
+      index:  "BLOG"
+      show:   "BLOG"
+      new:    "BLOG"
+      edit:   "BLOG"
 
     enquiries:
-      new: 'LET’S CONNECT'
+      new:    'LET’S CONNECT'
       create: 'LET’S CONNECT'
 
     services:
@@ -40,16 +41,17 @@ en:
 
   page-intro:
     blogs:
-      index: "Contrary to popular belief, Lorem Ipsum is not simply random text"
-      show: "Contrary to popular belief, Lorem Ipsum is not simply random text"
-      new: "Contrary to popular belief, Lorem Ipsum is not simply random text"
+      index:  "Contrary to popular belief, Lorem Ipsum is not simply random text"
+      show:   "Contrary to popular belief, Lorem Ipsum is not simply random text"
+      new:    "Contrary to popular belief, Lorem Ipsum is not simply random text"
+      edit:   "Contrary to popular belief, Lorem Ipsum is not simply random text"
 
     enquiries:
-      new: 'Lorem Ipsum is not simply random text'
+      new:    'Lorem Ipsum is not simply random text'
       create: 'Lorem Ipsum is not simply random text'
 
     services:
-      index: 'Lorem Ipsum is not simply random text'
+      index:  'Lorem Ipsum is not simply random text'
 
     sessions:
-      new: 'Lorem Ipsum is not simply random text'
+      new:    'Lorem Ipsum is not simply random text'

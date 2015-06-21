@@ -34,6 +34,16 @@ body {
 		text-decoration: none;
 		list-style: none;
 	}
+
+	&.modal-open:not(.smooth_scroll) {
+		.navbar.navbar-default {
+		  position: static;
+		}
+
+		.banner-wrap {
+			margin-top: 0px;
+		}
+	}
 } 
 
 .main-menu {

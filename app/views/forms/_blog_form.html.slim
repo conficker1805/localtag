@@ -1,0 +1,12 @@
+= simple_form_for @blog, html: { class: "blog-form"} do |f|
+	.col-md-12.input-wrap
+		= f.input :title, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Title'
+	.col-md-12.input-wrap
+		= f.input :intro, input_html: { class: 'form-control floating-label' }, label: false, placeholder: 'Intro'
+	.col-md-12.input-wrap
+		= f.association :category, input_html: { class: 'form-control floating-label' }, label: false, include_blank: false, placeholder: 'Category'
+	.col-md-12.input-wrap
+		= f.cktext_area :content, input_html: { class: 'form-control floating-label' }, label: false
+	.col-md-12.controls
+		= link_to @blog.current_method, 'javascript:', class: 'btn btn-info btn-raised submit-now'
+		= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-raised submit-now'
