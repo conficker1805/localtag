@@ -45,6 +45,7 @@ gem 'rails_admin'
 gem 'ransack'
 gem 'font-awesome-rails'
 gem 'cancancan', '~> 1.10'
+gem 'will_paginate', '~> 3.0.6'
 
 gem 'paperclip'
 gem 'aws-sdk', '< 2.0'

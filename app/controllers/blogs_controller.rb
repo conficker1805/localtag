@@ -3,10 +3,7 @@ class BlogsController < ApplicationController
 
   def index
     @search = Blog.search(params[:keyword])
-    @blogs = @search.result
-    #@search.sorts = 'name asc' if @search.sorts.empty?
-    #@blogs = @search.result.limit(6)
-
+    @blogs = @search.result.paginate(:page => params[:page], :per_page => 6)
   end
 
   def new
