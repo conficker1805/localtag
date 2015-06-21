@@ -49,6 +49,10 @@
 	}
 
 	section.section-3 {
+		.enquiry-form.mobile {
+			display: none;
+		}
+
 		.google-map {
 		  height: 570px;
 		  position: relative;
@@ -58,42 +62,6 @@
 		  	width: 100%;
 		  	position: absolute;
 		  }
-
-		  .enquiry-form {
-		    height: 470px;
-		    padding: 16px 20px 0 20px;
-				-webkit-border-radius: 2px;
-				-moz-border-radius: 2px;
-				border-radius: 2px;
-			  background-color: rgba(255, 255, 255, .8);
-				-webkit-box-shadow: 0 2px 6px rgba(0,0,0,.4);
-				-moz-box-shadow: 0 2px 6px rgba(0,0,0,.4);
-				box-shadow: 0 2px 6px rgba(0,0,0,.4);
-			  margin-top: 0px;
-			  position: relative;
-		    left: 100px;
-			  max-width: 350px;
-			  top: 50px;
-
-			  .form-control-wrapper {
-	  	    margin-top: 40px;
-
-		  	  textarea {
-	  	  	  height: 90px;
-		  	  } 
-			  }
-
-	  	  .controls {
-  	  	  margin-top: 37px;
-	  	  	text-align: right;
-
-		  	  a.submit-now {
-		  	  	height: 36px;
-	  	  	  line-height: 20px;
-		  	  }
-	  	  } 
-		  }
-			
 		}
 	}
 
@@ -104,8 +72,83 @@
 	  position: absolute;
 	  top: 30px;
 	}
+
+	.enquiry-form {
+    height: 470px;
+    padding: 16px 20px 0 20px;
+		-webkit-border-radius: 2px;
+		-moz-border-radius: 2px;
+		border-radius: 2px;
+	  background-color: rgba(255, 255, 255, .8);
+		-webkit-box-shadow: 0 2px 6px rgba(0,0,0,.4);
+		-moz-box-shadow: 0 2px 6px rgba(0,0,0,.4);
+		box-shadow: 0 2px 6px rgba(0,0,0,.4);
+	  margin-top: 0px;
+	  position: relative;
+    left: 100px;
+	  max-width: 350px;
+	  top: 50px;
+
+	  .form-control-wrapper {
+	    margin-top: 40px;
+
+  	  textarea {
+	  	  height: 90px;
+  	  } 
+	  }
+
+	  .controls {
+  	  margin-top: 37px;
+	  	text-align: right;
+
+  	  a.submit-now {
+  	  	height: 36px;
+	  	  line-height: 20px;
+  	  }
+	  } 
+  }
 }
 
+.page-wrap .enquiries-new-container {
+	@media (max-width: 991px) {
+		.section-1 .img-wrap {
+		  padding-left: 0;
+			margin-top: 150px;
+		}
+	}
+
+	@media (max-width: 767px) {
+		.section-1 {
+		  height: auto;
+  		padding-bottom: 50px;
+
+			.img-wrap {
+			  display: none;
+			}
+		}
+
+		.section-2 {
+			 background-position-x: -420px;
+		}
+
+		.section-3 {
+			.enquiry-form.mobile {
+				display: block;
+			  position: static;
+			  max-width: none;
+			  height: auto;
+			}
+
+			.google-map {
+				height: 400px;
+
+				.enquiry-form {
+					display: none;
+				}
+			}  
+		}
+	}
+}
 
 
 
