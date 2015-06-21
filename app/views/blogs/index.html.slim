@@ -1,13 +1,23 @@
 .blogs-index-container
-	.blogs-wrap
-		.container
+	.container
+		.search-wrap
+			.row
+				= search_form_for @search, url: blogs_path, html: { class: 'simple_form' } do |s|
+					.col-md-4
+				 		= s.search_field :title_cont, class: 'form-control floating-label', placeholder: 'Keyword'
+				 	.col-md-4
+				 		= s.select :category_id_eq, options_from_collection_for_select(Category.all, "id", "title", @search.category_id_eq), {}, class: 'form-control'
+				 	.col-md-4
+			 			= link_to 'Search', 'javascript:', class: 'btn btn-info btn-raised submit-now'
+
+		.blogs-wrap
 			.row
 				- @blogs.each do |blog|
 					.col-md-4
 						.blog-box
 							.blog-img-wrap
 								= link_to blog_path(blog.id)
-									= image_tag(blog.cover_photo, class: "cover")
+									= image_tag(blog.cover_photo, class: 'cover')
 								= image_tag blog.user.avatar, class: 'author'
 							.blog-brief
 								.category-name = blog.category.title

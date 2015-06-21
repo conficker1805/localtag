@@ -2,7 +2,11 @@ class BlogsController < ApplicationController
   before_filter :authenticate_user!, only: [:new]
 
   def index
-    @blogs = Blog.all
+    @search = Blog.search(params[:keyword])
+    @blogs = @search.result
+    #@search.sorts = 'name asc' if @search.sorts.empty?
+    #@blogs = @search.result.limit(6)
+
   end
 
   def new

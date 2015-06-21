@@ -1,6 +1,18 @@
 .blogs-index-container {
 	min-height: 1010px;
+
+	.search-wrap {
+	  margin-top: 50px;
+
+	  a.btn-raised {
+  	  height: 35px;
+		  line-height: 20px;
+		  margin-top: -7px;
+	  }
+	}
+
 	.blog-box {
-		margin-top: 40px;
+	  margin-top: 30px;
+    margin-bottom: 10px;
 	}
 }
