@@ -4,5 +4,6 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   def index
+  	@blogs = Blog.all.order('created_at ASC').limit(4)
   end
 end

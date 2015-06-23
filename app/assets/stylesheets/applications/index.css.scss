@@ -96,8 +96,32 @@
 				background: #FFF;
 				border-bottom: 1px solid #e5e5e5;
 
+				.avatar {
+					text-align: right;
+				}
+
+				.author, .intro {
+					padding-left: 0;
+				  margin-top: 20px;
+				}
+
+				.author, .title {
+					color: #212121;
+				}
+
+				.intro {
+					color: #727272;
+				}
+
 				&:last-child {
 					border-bottom: 0;
+				}
+
+				img {
+					border-radius: 50%;
+				  height: 30px;
+				  width: 30px;
+				  margin-top: 13px;
 				}
 			}
 		}
@@ -141,6 +165,52 @@
 				-webkit-box-shadow: 0 2px 6px rgba(0,0,0,.25);
 				-moz-box-shadow: 0 2px 6px rgba(0,0,0,.25);
 				box-shadow: 0 2px 6px rgba(0,0,0,.25);
+
+				.icon {
+					text-align: right;
+					padding-right: 0;
+				}
+
+				.title, .fa {
+				  color: #00bcd4;
+				}
+				
+				.title {
+				  font-size: 20px;
+				  margin-top: 23px;
+				}
+				
+				.fa {
+				  font-size: 35px;
+				  margin-top: 17px;
+				}
+			}
+
+			.description {
+				color: #212121;
+				line-height: 24px;
+			  margin-top: 13px;
+		    min-height: 74px;
+			}
+
+			.link {
+				text-align: center;	
+			}
+
+		}
+
+		.service-wrap:last-child .service-box {
+			.link {
+				margin-top: 15px;
+				text-align: left;
+
+				a, i {
+					color: #00bcd4;
+				}
+
+				i {
+					margin-left: 5px;
+				}
 			}
 		}
 	}
@@ -214,6 +284,9 @@
 
 			.info {
 				height: 130px;
+				img {
+				  height: 120px;
+				}
 			}
 		}
 	}
@@ -270,6 +343,28 @@
 			.section-2 {
 				img {
 					display: none;
+				}
+			}
+
+			.section-3 {
+				height: auto;
+			  padding-bottom: 40px;
+
+				.blog.fly-box {
+			    height: auto;
+					display: inline-block;
+				  padding-bottom: 20px;
+
+				  > .intro {
+				  	padding-left: 15px;
+				  	
+				  	.intro {
+				  		display: block;
+				  	}
+				  }
+
+				  .intro, .title {
+				  }
 				}
 			}
 
