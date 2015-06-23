@@ -209,6 +209,11 @@
 				
 			} 
 		}
+
+		.section-3 {
+			height: auto;
+		  padding-bottom: 60px;
+		}
 	}
 
 	@media (max-width: 767px) {
@@ -237,8 +242,7 @@
 		}
 
 		.section-3 {
-		  height: auto;
-		  padding-bottom: 60px;
+		  
 
 		  .service-box .title h2 p {
 		  	padding-right: 10px;
