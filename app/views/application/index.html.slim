@@ -1,4 +1,82 @@
 .application-index-container
+	section.section.section-1
+		h2 Google Certified Adwords & SEO
+		.btn-wrap
+			= link_to 'Enquiry now', 'javascript:', class: 'btn btn-info btn-raised'
+	section.section.section-2
+		.container
+			.row
+				.col-sm-6
+					h2 WHO WE ARE
+					p.describe Certified Google partner fostering prosperous local businesses managing Adwords, SEO & Local SEO, Educating & Networking
+					= link_to 'Get to know us >', 'javascript:'
+				.col-sm-6
+					= image_tag "home/section-2.png"
+
+	section.section.section-3
+		.container
+			.row
+				h2 Latest Blogs
+				.blogs-wrap
+					- @blogs.each do |blog|
+						.blog.fly-box
+							.col-xs-2.col-md-1.avatar
+								= image_tag blog.user.avatar
+							.col-sm-2.col-xs-10.author
+								= blog.user.name
+							.col-sm-9.col-xs-12.intro
+								= "<span class='title'>#{ blog.title }</span> - <span class='intro'>#{blog.intro}</span>".html_safe
+				.btn-wrap.fly-box
+					= link_to 'Browse more', 'javascript:', class: 'btn btn-info btn-raised'
+	section.section.section-4
+		.container
+			.row
+				h2 LOCALTAG SERVICES
+				.col-md-4.col-sm-6.fly-box.service-wrap
+					.service-box
+						.header
+							.row
+								.col-sm-3.icon
+									.fa.fa-connectdevelop
+								.col-sm-9
+									.title Unified Foundation
+						.description.col-md-12
+							| Have control of your Brand, properly showcased, connected and managed Online
+						.link.col-md-12
+							= image_tag "home/localtag1.png"
+				.col-md-4.col-sm-6.fly-box.service-wrap
+					.service-box
+						.header
+							.row
+								.col-sm-3.icon
+									.fa.fa-google-plus
+								.col-sm-9
+									.title Pay Per Click Advertising
+						.description.col-md-12
+							| Instant online visibility with your Adwords managed by Certified Google Partner Localtag.
+						.link.col-md-12
+							= image_tag "home/localtag2.png"
+
+				.col-md-4.col-sm-12.fly-box.service-wrap
+					.service-box
+						.header
+							.row
+								.col-sm-3.icon
+									.fa.fa-search-plus
+								.col-sm-9
+									.title Promoting Good Business
+						.description.col-md-12
+							| Outshine your competition through Local SEO, the Localtag XChange and advanced strategies as used by Westpac, Virgin Media and Apple.
+						.link.col-md-12
+							= link_to "Join our Localtag XChange community<i class='fa fa-long-arrow-right'></i>".html_safe, "javascript:"
+	section.section.section-5
+		.container
+			.row
+				.col-md-6.col-sm-8
+					h2 LOCALTAG EDUCATION
+					p.describe
+						| Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the when an unknown printer took a galley of type.
+					= link_to 'Discover now', 'javascript:', class: 'btn btn-info btn-raised'
 	section.section.section-6
 		.container
 			.row
