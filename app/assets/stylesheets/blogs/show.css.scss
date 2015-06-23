@@ -134,4 +134,31 @@
 			}
 		}
 	}
+
+	@media (max-width: 767px) {
+		.about-author-wrap {
+		  box-shadow: none;
+
+			.img-wrap {
+			  text-align: center;
+
+			  img {  	
+			    width: 200px;
+			    margin: 0 auto;
+			  }
+			}
+
+			.author-wrap {
+    		text-align: center;
+			}
+		}
+
+		.related-post {
+			margin-top: 200px;
+
+			.blog-box {
+				margin-bottom: 20px;
+			}
+		}
+	}
 }
