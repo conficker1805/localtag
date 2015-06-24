@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new]
+  before_filter :authenticate_author!, only: [:new]
 
   def index
     @search = Blog.search(params[:keyword])

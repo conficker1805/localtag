@@ -1,5 +1,5 @@
-class User < ActiveRecord::Base
-  include RailsAdmin::User
+class Author < ActiveRecord::Base
+  #include RailsAdmin::User
   extend Enumerize
 
   # Include default devise modules. Others available are:
@@ -7,7 +7,9 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  enumerize :role, in: [:normal, :manager], default: :normal
+  has_many :blogs
+
+  enumerize :role, in: [:author, :manager], default: :author
 
   has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "190x190#" } 
   																#:default_url => "/images/:style/missing.png"
