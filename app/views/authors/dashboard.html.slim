@@ -1,0 +1,46 @@
+.authors-dashboard-container
+	.container
+		.row
+			.content-box
+				= render partial: 'authors/dashboard/menu'
+				.col-md-12
+					table.table.table-responsive
+						thead
+							tr
+								th width="15"
+								th Subject
+								th Category
+								th Status
+								th width="100"
+									| Publish
+								th width="90"
+									| Edit
+						tbody
+							- if @posts.present?
+								- @posts.each do |post|
+									tr
+										td
+											.checkbox
+												label
+													= check_box_tag "delete-#{post.id}", post.id, false, { class: 'delete-all' }
+										td
+											label.checkbox-label for="delete-#{post.id}"
+												= post.title
+										td
+											= humanized_money_with_symbol post.price_cents
+										td
+											= post.category.title
+										td
+											- if post.status
+												= 'Approved'
+											- else
+												= 'Pending'
+										td
+											.togglebutton
+												label
+													- if post.publish
+														input type="checkbox" value="#{post.id}" class="published" checked="checked"
+													- else
+														input type="checkbox" value="#{post.id}" class="published"
+										td
+											= link_to 'Duplicate', post_duplicate_path(post.id), class: 'btn btn-default btn-duplicate'

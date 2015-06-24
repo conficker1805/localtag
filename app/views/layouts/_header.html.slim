@@ -2,22 +2,28 @@
 #prev
 .navbar.navbar-default
   .container.main-menu
-    .navbar-header
-      button.navbar-toggle data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button" 
-        span.icon-bar
-        span.icon-bar
-        span.icon-bar
-      = link_to root_path, class: 'navbar-brand'
-        = image_tag "home/brand.png"
-    .navbar-collapse.collapse.navbar-responsive-collapse
-      ul.nav.navbar-nav.navbar-right
-        li = link_to  "Home", root_path
-        li = link_to  "Services", services_path
-        li = link_to  "Education", "javascript:"
-        li = link_to  "XChange", "javascript:"
-        li = link_to  "Blog", blogs_path
-        li = link_to  "Let's Connect", new_enquiry_path
-- unless is_home?
+    - if author_signed_in?
+      .navbar-header
+        = link_to root_path, class: 'navbar-brand'
+          = image_tag "home/brand.png"
+    - else
+      .navbar-header
+        button.navbar-toggle data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button" 
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        = link_to root_path, class: 'navbar-brand'
+          = image_tag "home/brand.png"
+      .navbar-collapse.collapse.navbar-responsive-collapse
+        ul.nav.navbar-nav.navbar-right
+          li = link_to  "Home", root_path
+          li = link_to  "Services", services_path
+          li = link_to  "Education", "javascript:"
+          li = link_to  "XChange", "javascript:"
+          li = link_to  "Blog", blogs_path
+          li = link_to  "Let's Connect", new_enquiry_path
+
+- if !is_home? && user_signed_in?
   .banner-wrap
     .container
       .row

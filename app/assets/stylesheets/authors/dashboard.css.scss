@@ -1,0 +1,44 @@
+.authors-dashboard-container {
+	padding-top: 90px;
+
+	.content-box {
+		margin: 100px 0;
+	  min-height: 770px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		border-radius: 4px;
+		-webkit-box-shadow: 0 2px 6px rgba(0,0,0,.25);
+		-moz-box-shadow: 0 2px 6px rgba(0,0,0,.25);
+		box-shadow: 0 2px 6px rgba(0,0,0,.25);
+
+		ul.nav {
+			width: 100%;
+			display: block;
+  		border-bottom: 1px solid #e5e5e5;
+
+			li a {
+				text-transform: uppercase;
+				color: #727272;
+				
+				&:hover {
+					color: #00bcd4;
+				  background-color: transparent;
+				}
+			}
+
+		}
+
+		.table {
+			thead th {
+				font-size: 16px;
+				font-weight: bold;
+				color: #212121;
+			}
+
+			tbody td {
+				font-size: 14px;
+				color: #212121;
+			}
+		}
+	}
+}

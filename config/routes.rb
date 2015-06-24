@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :authors
+  devise_for :authors, :controllers => {:registrations => "authors/registrations", :sessions => "authors/sessions"}
   devise_for :users
   devise_for :admins
   mount Ckeditor::Engine => '/ckeditor'
@@ -21,6 +21,8 @@ Rails.application.routes.draw do
   resources :enquiries, only: [:new, :create]
   resources :services,  only: [:index]
   resources :subcribes, only: [:create]
+
+  get 'author/dashboard/:alias' => 'authors/authors#dashboard', as: :author_dashboard
 
   # Example resource route with options:
   #   resources :products do
