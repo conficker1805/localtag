@@ -1,5 +1,14 @@
 .blogs-new-container {
 	.blog-form {
+		span.publish {
+			float: left;
+			color: #000;
+		}
+
+		span.toggle {
+		  margin-left: 15px;
+		}
+
 		.input-wrap, .controls {
 			margin-top: 20px;
 		}

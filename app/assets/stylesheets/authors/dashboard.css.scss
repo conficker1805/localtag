@@ -4,6 +4,7 @@
 	.content-box {
 		margin: 100px 0;
 		padding-bottom: 30px;
+		width: 100%;
   	display: inline-block;
 		-webkit-border-radius: 4px;
 		-moz-border-radius: 4px;
@@ -96,6 +97,10 @@
 					}
 				}
 			} 
+		}
+
+		.blogs-new-container {
+		  padding: 0 25px;
 		}
 	}
 }

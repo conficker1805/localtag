@@ -1,4 +1,4 @@
 ul.nav.navbar-nav
-  li = link_to 'Update your Profile', 'javascript:'
-  li = link_to 'List of courses', 'javascript:'
-  li = link_to 'List of invoices', 'javascript:'
+  li = link_to 'Update your Profile', author_dashboard_path('profile')
+  li = link_to 'List of blogs', 			author_dashboard_path('my-blog')
+  li = link_to 'Write a new blog', 		author_dashboard_path('new-blog')

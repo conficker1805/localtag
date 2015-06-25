@@ -4,6 +4,7 @@ module Authors
 
 		def dashboard
 			@blogs = Blog.all
+			@blog  = Blog.new
 			render template: "authors/dashboard"
 		end
 	end
