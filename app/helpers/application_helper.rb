@@ -16,6 +16,18 @@ module ApplicationHelper
   	"smooth_scroll" unless disable_list.include? "#{controller_name}/#{action_name}"
   end
 
+  def resource_name
+    :author
+  end
+
+  def resource
+    @resource ||= Author.new
+  end
+
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:author]
+  end
+
   private
 
   def controller_name

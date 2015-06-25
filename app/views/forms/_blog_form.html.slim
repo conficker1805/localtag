@@ -11,9 +11,42 @@
 			label 
 				input type="checkbox" value="" class="published" checked="checked"
 	.col-md-6.input-wrap
-		= f.input :cover_photo
+		.cover-photo.uploader-wrap
+			.col-md-2.label-wrap
+				span.img-label Cover Photo
+			.col-md-3
+				= image_tag image_path('blogs/no-cover.jpg'), class: 'preview'
+			.col-md-4
+				.button-wrap
+					= link_to 'Choose file', 'javascript:', class: 'choose-file btn btn-default btn-raised', :onclick => 'fake_click(this)'
+					= f.input_field :cover_photo, class: 'hide',
+													:onchange => 'readURL(this)', 
+													accept: "image/*"
+				span.file-name No file chosen
 	.col-md-12.input-wrap
 		= f.cktext_area :content, input_html: { class: 'form-control floating-label' }, label: false
 	.col-md-12.controls
 		= link_to @blog.current_method, 'javascript:', class: 'btn btn-info btn-raised submit-now'
 		= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'btn btn-danger btn-raised submit-now'
+
+javascript:
+	function fake_click(obj) {
+    $(obj).next().trigger('click')
+  }
+
+  function readURL(input) {
+    file = input.files[0]
+    var size = file.size/1024/1024;
+    if (input.files && file && size <= 2) {
+      var reader = new FileReader();
+
+      reader.onload = (function(data) {
+        return function(e) {
+          var uploader = $(input).closest('.uploader-wrap')
+          $(uploader).find('img.preview').attr('src', e.target.result)
+          $(uploader).find('span.file-name').text(data.name)
+        };
+      })(file);
+      reader.readAsDataURL(file);
+    }
+  }
