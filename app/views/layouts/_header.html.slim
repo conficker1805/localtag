@@ -2,10 +2,24 @@
 #prev
 .navbar.navbar-default
   .container.main-menu
-    - if author_signed_in?
+    - if (controller.controller_name == 'authors')
       .navbar-header
         = link_to root_path, class: 'navbar-brand'
           = image_tag "home/brand.png"
+      ul.nav.navbar-nav.pull-right
+        li.dropdown
+          div.dropdown-wrapper
+            a.dropdown-toggle href="#" data-toggle="dropdown"
+              = image_tag current_author.avatar(:thumb)
+              = current_author.name
+              span.dropdown-icon
+                ="<i class='fa fa-angle-down'></i>".html_safe
+            ul.dropdown-menu
+              li = link_to 'Update your Profile', author_dashboard_path('profile')
+              li = link_to 'List of blogs',       author_dashboard_path('my-blog')
+              li = link_to 'Write a new blog',    author_dashboard_path('new-blog')
+              li.divider
+              li= link_to "Logout<span class='logout'><i class='fa fa-power-off'></i></span>".html_safe, destroy_author_session_path, method: :delete
     - else
       .navbar-header
         button.navbar-toggle data-target=".navbar-responsive-collapse" data-toggle="collapse" type="button" 
@@ -30,3 +44,21 @@
         h1 = page_title
         hr
         p.intro = page_intro
+
+javascript:
+  $('a.dropdown-toggle').hover(
+    function() {
+      $(this).parent().addClass("open");
+    }, 
+    function() {
+      var wrapper_button = $(this).parent();
+      wrapper_button.hover(
+        function() {
+        }, 
+        function() {
+          $(this).removeClass("open");
+        }
+      );
+    }
+  );
+

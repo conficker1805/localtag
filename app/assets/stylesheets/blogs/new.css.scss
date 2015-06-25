@@ -18,9 +18,11 @@
 		}
 
 	  .controls {
+	  	text-align: right;
+
 	  	.btn-raised {
+	  		margin: 0;
 	  	  height: 36px;
-	  	  margin-right: 30px;
   			line-height: 20px;
 	  	}
 	  }
@@ -44,8 +46,12 @@
 	  	}
 
 	  	.button-wrap {
-
 		  	a {
+	  		  width: 110px;
+				  padding: 7px;
+				  height: 30px;
+				  color: #00bcd4;
+				  font-size: 12px;
 		  		margin-top: 0;
 		  	}
 	  	}
