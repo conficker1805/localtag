@@ -15,4 +15,8 @@ class Author < ActiveRecord::Base
   																#:default_url => "/images/:style/missing.png"
   validates_attachment_size :avatar, :in => 0.megabytes..2.megabytes, message: 'The photo must be less than 2Mb'
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
+
+  # def name
+  #   id
+  # end
 end

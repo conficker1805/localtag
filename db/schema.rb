@@ -66,9 +66,11 @@ ActiveRecord::Schema.define(version: 20150624151901) do
     t.integer  "cover_photo_file_size"
     t.datetime "cover_photo_updated_at"
     t.string   "intro"
-    t.text     "content"
+    t.string   "status"
+    t.boolean  "published"
     t.integer  "category_id"
-    t.integer  "user_id"
+    t.integer  "author_id"
+    t.text     "content"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,8 +1,11 @@
 class Blog < ActiveRecord::Base
 	include RailsAdmin::Blog
+  extend Enumerize
 
 	belongs_to :category
 	belongs_to :author
+
+  enumerize :status, in: [:pending, :approved], default: :pending
 
   validates :title, :content, :category_id, presence: true
   has_attached_file :cover_photo, :styles => { :medium => "300x300#", :thumb => "190x190#" } 
@@ -14,3 +17,4 @@ class Blog < ActiveRecord::Base
   	self.new_record? ? 'Create' : 'Update'
   end
 end
+  

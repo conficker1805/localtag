@@ -6,10 +6,12 @@ module RailsAdmin::Blog
       edit do
         field :title
         field :cover_photo
+        field :category
+        field :author
+        field :status
+        field :published
         field :intro
         field :content, :ck_editor
-        field :category
-        field :user
       end
     end
   end

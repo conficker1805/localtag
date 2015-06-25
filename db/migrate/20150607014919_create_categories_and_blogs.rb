@@ -10,9 +10,11 @@ class CreateCategoriesAndBlogs < ActiveRecord::Migration
     	t.string     :title
         t.attachment :cover_photo
     	t.string     :intro
-    	t.text       :content
+        t.string     :status
+        t.boolean    :published
         t.references :category
-        t.references :user
+        t.references :author
+    	t.text       :content
 
     	t.timestamps
     end

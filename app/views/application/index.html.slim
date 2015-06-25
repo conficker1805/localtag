@@ -21,9 +21,9 @@
 					- @blogs.each do |blog|
 						.blog.fly-box
 							.col-xs-2.col-md-1.avatar
-								= image_tag blog.user.avatar
+								= image_tag blog.author.avatar
 							.col-sm-2.col-xs-10.author
-								= blog.user.name
+								= blog.author.name
 							.col-sm-9.col-xs-12.intro
 								= "<span class='title'>#{ blog.title }</span> - <span class='intro'>#{blog.intro}</span>".html_safe
 				.btn-wrap.fly-box

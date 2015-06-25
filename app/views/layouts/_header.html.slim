@@ -23,7 +23,7 @@
           li = link_to  "Blog", blogs_path
           li = link_to  "Let's Connect", new_enquiry_path
 
-- if !is_home? && user_signed_in?
+- if (controller.controller_name != 'authors') && !is_home?
   .banner-wrap
     .container
       .row
