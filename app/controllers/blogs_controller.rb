@@ -11,7 +11,7 @@ class BlogsController < ApplicationController
   end
 
   def create
-    @blog = current_user.blogs.new(blog_params)
+    @blog = current_author.blogs.new(blog_params)
     
     if @blog.save
       redirect_to root_path, notice: 'Create blog successfully'
@@ -46,6 +46,6 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-  	params.require(:blog).permit(:title, :intro, :content, :category_id)
+  	params.require(:blog).permit(:title, :intro, :content, :published, :category_id)
   end
 end

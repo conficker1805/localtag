@@ -5,9 +5,9 @@
   	}
   }
 
-  .main-menu .nav.navbar-nav {
-	  margin-top: 17px;
-
+  .main-menu .nav.navbar-nav .dropdown {
+  	margin-top: 17px;
+  	
   	a.dropdown-toggle {
   		font-size: 18px;
 			text-decoration: none;
@@ -31,7 +31,6 @@
 			.dropdown-icon + .ripple-wrapper {
 				display: none;
 			}
-
   	}
 
 		.dropdown-menu {

@@ -17,12 +17,17 @@ Rails.application.routes.draw do
   #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
+
   resources :blogs,     except: :destroy
   resources :enquiries, only: [:new, :create]
   resources :services,  only: [:index]
   resources :subcribes, only: [:create]
 
-  get 'author/dashboard/:alias' => 'authors/authors#dashboard', as: :author_dashboard
+  namespace :authors do
+    resource :dashboard, only: [:my_post] do
+      get :my_blog
+    end
+  end
 
   # Example resource route with options:
   #   resources :products do
