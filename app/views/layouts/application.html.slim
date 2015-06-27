@@ -20,14 +20,14 @@ html
 javascript:
 	$(function() {
 		$.material.init();
-		
+
 		$('.submit-now').click(function(){
 			$(this).closest('form').submit();
 		})
 
 		setTimeout(function(){
 			$('.no-autocomplete').removeAttr('disabled')
-			
+
 		  if (WURFL.form_factor != 'Desktop') {
 		    $("body").removeClass('smooth_scroll')
 		  }
@@ -35,4 +35,26 @@ javascript:
 
 	});
 
-	
+javascript:
+	function fake_click(obj) {
+    $(obj).next().trigger('click')
+  }
+
+  function readURL(input) {
+    file = input.files[0]
+    var size = file.size/1024/1024;
+    if (input.files && file && size <= 2) {
+      var reader = new FileReader();
+
+      reader.onload = (function(data) {
+        return function(e) {
+          var uploader = $(input).closest('.uploader-wrap')
+          $(uploader).find('img.preview').attr('src', e.target.result)
+          $(uploader).find('span.file-name').text(data.name)
+        };
+      })(file);
+      reader.readAsDataURL(file);
+    }
+  }
+
+

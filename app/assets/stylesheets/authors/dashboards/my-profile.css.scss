@@ -1,0 +1,49 @@
+.authors-dashboards-myprofile-container {
+  .edit-form-wrap {
+    padding: 0 25px;
+  }
+
+  textarea {
+    height: 85px;
+  }
+
+  .input-wrap {
+    margin-top: 25px;
+  }
+
+  .uploader-wrap {
+    padding-top: 28px;
+
+    .img-label {
+      padding-right: 0;
+      font-size: 16px;
+      color: #212121;
+    }
+
+    .img-preview {
+      padding-left: 0;
+
+      img {
+        width: 110px;
+        height: 138px;
+      }
+    }
+
+    a.choose-file {
+      margin-top: 0;
+      padding: 8px 20px;
+      color: #00bcd4;
+    }
+  }
+
+  .controls {
+    text-align: right;
+    margin-top: 90px;
+
+    a.submit-now {
+      height: 35px;
+      padding: 2px 30px;
+    }
+  }
+}
+

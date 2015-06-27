@@ -1,10 +1,10 @@
 module ApplicationHelper
   def is_home?
-    true if controller_name == 'application' and action_name == 'index'
+    controller_name == 'application' and action_name == 'index'
   end
 
   def is_author_dashboard?
-    true if controller_name == 'dashboards'
+    controller_name == 'dashboards'
   end
 
   def page_title

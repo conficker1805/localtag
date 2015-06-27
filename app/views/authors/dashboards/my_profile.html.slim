@@ -1,11 +1,11 @@
-.authors-dashboard-myblog-container
-  .container
+.authors-dashboards-myprofile-container
+  .container.author
     .row
       .content-box
         = render partial: 'authors/dashboards/menu'
-        .show-profile-container
-          .col-md-12
-            = form_for(current_author, as: :author, url: registration_path(:author), html: { method: :put }) do |f|
+        .edit-form-wrap
+          = form_for(current_author, as: :author, url: registration_path(:author), html: { method: :put, class: 'simple_form' }) do |f|
+            .col-md-12
               .row
                 .col-md-6
                   .input-wrap
@@ -13,10 +13,25 @@
                   .input-wrap
                     = f.email_field :email, class: 'form-control floating-label', placeholder: 'Email'
                   .input-wrap
+                    = f.text_area :description, class: 'form-control floating-label', placeholder: 'Description'
+                  .input-wrap
+                    = f.password_field :current_password, class: 'form-control floating-label', placeholder: 'Current password'
+                  .input-wrap
                     = f.password_field :password, class: 'form-control floating-label', placeholder: 'Password'
                   .input-wrap
                     = f.password_field :password_confirmation, class: 'form-control floating-label', placeholder: 'Password confirmation'
-                  .input-wrap
-                    = f.password_field :current_password, class: 'form-control floating-label', placeholder: 'Current password'
-                  .actions
-                    = link_to 'Submit', 'javascript:', class: 'btn btn-info btn-raised submit-now'
+                .col-md-6
+                  .row.uploader-wrap
+                    .col-md-3.label-wrap
+                      span.img-label Profile Photo
+                    .col-md-3.img-preview
+                      = image_tag image_path('authors/no-avatar.jpg'), class: 'preview'
+                    .col-md-4
+                      .button-wrap
+                        = link_to 'Choose file', 'javascript:', class: 'choose-file btn btn-default btn-raised', :onclick => 'fake_click(this)'
+                        = f.file_field :avatar, class: 'hide',
+                                        :onchange => 'readURL(this)',
+                                        accept: "image/*"
+                      span.file-name No file chosen
+            .col-md-12.controls
+              = link_to 'Submit', 'javascript:', class: 'btn btn-info btn-raised submit-now'
