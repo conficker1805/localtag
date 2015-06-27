@@ -26,6 +26,8 @@ Rails.application.routes.draw do
   namespace :authors do
     resource :dashboard, only: [:my_post] do
       get :my_blog
+      get :my_profile
+      get :new_blog
     end
   end
 

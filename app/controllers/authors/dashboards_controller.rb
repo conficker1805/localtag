@@ -5,5 +5,13 @@ module Authors
 		def my_blog
 			@blogs = current_author.blogs
 		end
+
+    def my_profile
+
+    end
+
+    def new_blog
+      @blog  = Blog.new
+    end
 	end
 end

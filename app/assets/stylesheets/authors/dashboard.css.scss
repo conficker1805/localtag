@@ -1,8 +1,6 @@
-.authors-dashboard-container {
-	padding-top: 90px;
-
+.authors-dashboard-myblog-container {
 	.content-box {
-		margin: 100px 0;
+		margin: 50px 0;
 		padding-bottom: 30px;
 		width: 100%;
   	display: inline-block;
@@ -34,7 +32,7 @@
 				a {
 					text-transform: uppercase;
 					color: #727272;
-					
+
 					&:hover, &:active {
 						color: #00bcd4;
 					  background-color: transparent;
@@ -44,7 +42,7 @@
 				&.active {
 				  border-bottom: 4px solid #00bcd4;
 				}
-			} 
+			}
 
 		}
 
@@ -96,7 +94,7 @@
 						line-height: 14px;
 					}
 				}
-			} 
+			}
 		}
 
 		.blogs-new-container {

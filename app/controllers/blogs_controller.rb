@@ -12,9 +12,9 @@ class BlogsController < ApplicationController
 
   def create
     @blog = current_author.blogs.new(blog_params)
-    
+
     if @blog.save
-      redirect_to root_path, notice: 'Create blog successfully'
+      redirect_to my_blog_authors_dashboard_path, notice: 'Create blog successfully'
     else
       render :new
     end

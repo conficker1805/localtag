@@ -8,8 +8,8 @@
 	.col-md-6.input-wrap
 		span.publish Publish
 		.togglebutton
-			label 
-				input type="checkbox" value="" class="published"
+			label
+				input type="checkbox" class="published" name="blog[published]"
 	.col-md-6.input-wrap
 		.cover-photo.uploader-wrap
 			.col-md-2.label-wrap
@@ -20,14 +20,14 @@
 				.button-wrap
 					= link_to 'Choose file', 'javascript:', class: 'choose-file btn btn-default btn-raised', :onclick => 'fake_click(this)'
 					= f.input_field :cover_photo, class: 'hide',
-													:onchange => 'readURL(this)', 
+													:onchange => 'readURL(this)',
 													accept: "image/*"
 				span.file-name No file chosen
 	.col-md-12.input-wrap
 		= f.cktext_area :content, input_html: { class: 'form-control floating-label' }, label: false
 	.col-md-12.controls
 		= link_to @blog.current_method, 'javascript:', class: 'btn btn-info btn-raised submit-now'
-	
+
 javascript:
 	function fake_click(obj) {
     $(obj).next().trigger('click')
