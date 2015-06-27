@@ -5,7 +5,7 @@
         = render partial: 'authors/dashboards/menu'
         .show-profile-container
           .col-md-12
-            = form_for(current_author, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f|
+            = form_for(current_author, as: :author, url: registration_path(:author), html: { method: :put }) do |f|
               .row
                 .col-md-6
                   .input-wrap

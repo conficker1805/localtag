@@ -23,11 +23,11 @@ Rails.application.routes.draw do
   resources :services,  only: [:index]
   resources :subcribes, only: [:create]
 
-  namespace :authors do
-    resource :dashboard, only: [:my_post] do
-      get :my_blog
-      get :my_profile
-      get :new_blog
+  namespace :authors, as: nil do
+    resource :dashboard, only: [:my_post, :my_profile, :new_blog] do
+      get :my_blog,     as: :author_blogs
+      get :my_profile,  as: :author_profile
+      get :new_blog,    as: :new_blog
     end
   end
 

@@ -1,6 +1,10 @@
 module ApplicationHelper
   def is_home?
-    true if (controller_name == 'application') and (action_name == 'index')
+    true if controller_name == 'application' and action_name == 'index'
+  end
+
+  def is_author_dashboard?
+    true if controller_name == 'dashboards'
   end
 
   def page_title
@@ -12,24 +16,7 @@ module ApplicationHelper
   end
 
   def smooth_scroll?
-  	disable_list = [
-      "blogs/index", "blogs/show", "blogs/new", "blogs/edit",
-      "dashboards/my_blog", "dashboards/new_blog", "dashboards/my_profile"
-    ]
-
-  	"smooth_scroll" unless disable_list.include? "#{controller_name}/#{action_name}"
-  end
-
-  def resource_name
-    :author
-  end
-
-  def resource
-    @resource ||= Author.new
-  end
-
-  def devise_mapping
-    @devise_mapping ||= Devise.mappings[:author]
+  	"smooth_scroll" unless disable_smooth_scroll_list.include? "#{controller_name}/#{action_name}"
   end
 
   private
@@ -40,5 +27,17 @@ module ApplicationHelper
 
   def action_name
   	controller.action_name
+  end
+
+  def disable_smooth_scroll_list
+    [
+      "blogs/index",
+      "blogs/new",
+      "blogs/show",
+      "blogs/edit",
+      "dashboards/my_blog",
+      "dashboards/new_blog",
+      "dashboards/my_profile"
+    ]
   end
 end
