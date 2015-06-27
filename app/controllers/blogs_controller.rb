@@ -14,7 +14,7 @@ class BlogsController < ApplicationController
     @blog = current_author.blogs.new(blog_params)
 
     if @blog.save
-      redirect_to my_blog_authors_dashboard_path, notice: 'Create blog successfully'
+      redirect_to author_blogs_dashboard_path, notice: 'Create blog successfully'
     else
       render :new
     end

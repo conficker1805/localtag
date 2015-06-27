@@ -15,8 +15,6 @@
                   .input-wrap
                     = f.text_area :description, class: 'form-control floating-label', placeholder: 'Description'
                   .input-wrap
-                    = f.password_field :current_password, class: 'form-control floating-label', placeholder: 'Current password'
-                  .input-wrap
                     = f.password_field :password, class: 'form-control floating-label', placeholder: 'Password'
                   .input-wrap
                     = f.password_field :password_confirmation, class: 'form-control floating-label', placeholder: 'Password confirmation'
@@ -25,7 +23,7 @@
                     .col-md-3.label-wrap
                       span.img-label Profile Photo
                     .col-md-3.img-preview
-                      = image_tag image_path('authors/no-avatar.jpg'), class: 'preview'
+                      = image_tag image_path(current_author.avatar.url(:thumb)), class: 'preview'
                     .col-md-4
                       .button-wrap
                         = link_to 'Choose file', 'javascript:', class: 'choose-file btn btn-default btn-raised', :onclick => 'fake_click(this)'
