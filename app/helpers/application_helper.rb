@@ -7,6 +7,10 @@ module ApplicationHelper
     controller_name == 'dashboards'
   end
 
+  def is_controller_blog?
+    controller_name == 'blogs'
+  end
+
   def page_title
   	t("page-title.#{controller_name}.#{action_name}")
   end
@@ -33,6 +37,7 @@ module ApplicationHelper
     [
       "blogs/index",
       "blogs/new",
+      "blogs/create",
       "blogs/show",
       "blogs/edit",
       "dashboards/new_blog",

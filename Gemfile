@@ -35,6 +35,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Development
+gem 'remotipart', '~> 1.2'
 gem 'slim'
 gem 'devise'
 gem 'ckeditor'

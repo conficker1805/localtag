@@ -21,10 +21,6 @@ javascript:
 	$(function() {
 		$.material.init();
 
-		$('.submit-now').click(function(){
-			$(this).closest('form').submit();
-		})
-
 		setTimeout(function(){
 			$('.no-autocomplete').removeAttr('disabled')
 
@@ -54,7 +50,33 @@ javascript:
         };
       })(file);
       reader.readAsDataURL(file);
+
     }
   }
+
+javascript:
+  $('form.ajax').bind("ajax:before", function(){
+    for (instance in CKEDITOR.instances){
+      CKEDITOR.instances[instance].updateElement();
+    }
+  });
+
+  $('form.ajax').on('ajax:success', function(event, data, status, xhr) {
+    console.log('success')
+  });
+
+  $('form.ajax').on("ajax:error", function(event, data, status, xhr) {
+    console.log('error')
+  });
+
+  $("form.ajax").on("ajax:complete", function(event, data, status, xhr){
+    var response = JSON.parse(data.responseText)
+    BootstrapDialog.alert(response.message);
+  });
+
+  $('.submit-now').click(function(){
+    //$(this).closest('form').submit()
+    $(this).closest('form').trigger('submit.rails');
+  })
 
 

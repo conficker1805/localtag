@@ -37,7 +37,7 @@ body {
 
 	&.modal-open:not(.smooth_scroll) {
 		.navbar.navbar-default {
-		  position: static;
+		  // position: static;
 		}
 
 		.banner-wrap {
@@ -45,7 +45,7 @@ body {
 		}
 
 		.content-box {
-			margin-top: 110px;
+			// margin-top: 110px;
 		}
 	}
 }

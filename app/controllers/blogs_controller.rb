@@ -12,10 +12,11 @@ class BlogsController < ApplicationController
 
   def create
     @blog = current_author.blogs.new(blog_params)
+
     if @blog.save
-      redirect_to author_blogs_dashboard_path, notice: 'Create blog successfully'
+      render json: { :message => 'Create blog successfully' }, status: :ok
     else
-      render :new
+      render json: { :message =>  @blog.errors.full_messages.first }, status: 404
     end
   end
 
@@ -30,6 +31,7 @@ class BlogsController < ApplicationController
     if @blog.update(blog_params)
       redirect_to author_edit_blogs_dashboard_path(@blog), notice: 'Update blog successfully'
     else
+      flash[:alert] = @blog.errors.full_messages.first
       redirect_to author_edit_blogs_dashboard_path(@blog)
     end
   end
@@ -60,6 +62,6 @@ class BlogsController < ApplicationController
   end
 
   def blog_params
-  	params.require(:blog).permit(:title, :intro, :content, :published, :category_id)
+  	params.require(:blog).permit(:title, :intro, :content, :published, :category_id, :cover_photo)
   end
 end
