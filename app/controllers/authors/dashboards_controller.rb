@@ -13,5 +13,16 @@ module Authors
     def new_blog
       @blog  = Blog.new
     end
+
+    def edit_blog
+      @blog = Blog.find(blog_id)
+      render :new_blog
+    end
+
+    protected
+
+    def blog_id
+      params.require(:blog_id)
+    end
 	end
 end

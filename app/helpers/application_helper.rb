@@ -35,8 +35,9 @@ module ApplicationHelper
       "blogs/new",
       "blogs/show",
       "blogs/edit",
-      "dashboards/my_blog",
       "dashboards/new_blog",
+      "dashboards/edit_blog",
+      "dashboards/my_blog",
       "dashboards/my_profile"
     ]
   end

@@ -4,22 +4,22 @@
 			.col-md-8.col-md-offset-2
 				h1 = @blog.title
 				p.author
-					- if user_signed_in? && @blog.user == current_user
+					- if author_signed_in? && @blog.author == current_author
 						= link_to edit_blog_path(@blog)
 							i.fa.fa-pencil
-					= " Posted by #{ @blog.user.name }, #{ @blog.created_at.strftime("%d %b %Y") }"
+					= " Posted by #{ @blog.author.name }, #{ @blog.created_at.strftime("%d %b %Y") }"
 				.content-wrap
 					= @blog.content.html_safe
 				.about-author-wrap
 					.row.img-wrap
 						.col-lg-3.col-md-4.col-sm-3.img-wrap
-							= image_tag(@blog.user.avatar)
+							= image_tag(@blog.author.avatar)
 						.col-md-8.col-lg-8.col-sm-9.author-wrap
 							h2 ABOUT THE AUTHOR
 							p.describe
-								= @blog.user.description
+								= @blog.author.description
 							.link-posts
-								= link_to "View all posts by #{ @blog.user.name }", "javascript:"
+								= link_to "View all posts by #{ @blog.author.name }", "javascript:"
 				.related-post
 					h2 RELATED POST
 					.row.posts
@@ -29,8 +29,8 @@
 									.blog-img-wrap
 										= link_to blog_path(blog.id)
 											= image_tag(blog.cover_photo, class: "cover")
-										= image_tag(blog.user.avatar, class: 'author')
+										= image_tag(blog.author.avatar, class: 'author')
 									.blog-brief
 										.category-name = blog.category.title
-										.blog-title = link_to blog.title, blog_path(blog.id)
+										.blog-title = link_to blog.title, blog_path(blog)
 										.blog-intro = blog.intro

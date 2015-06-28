@@ -12,7 +12,6 @@ class BlogsController < ApplicationController
 
   def create
     @blog = current_author.blogs.new(blog_params)
-
     if @blog.save
       redirect_to author_blogs_dashboard_path, notice: 'Create blog successfully'
     else
@@ -22,15 +21,16 @@ class BlogsController < ApplicationController
 
   def edit
     @blog = Blog.find(blog_id)
+    render 'authors/dashboards/new_blog'
   end
 
   def update
     @blog = Blog.find(blog_id)
 
     if @blog.update(blog_params)
-      redirect_to blog_path(@blog), notice: 'Update blog successfully'
+      redirect_to author_edit_blogs_dashboard_path(@blog), notice: 'Update blog successfully'
     else
-      render :edit
+      redirect_to author_edit_blogs_dashboard_path(@blog)
     end
   end
 
