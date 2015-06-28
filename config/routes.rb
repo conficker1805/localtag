@@ -19,6 +19,11 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
 
   resources :blogs,     except: :destroy
+
+  resource :blogs do
+    post :delete_selected_blogs, as: :delete_selected
+  end
+
   resources :enquiries, only: [:new, :create]
   resources :services,  only: [:index]
   resources :subcribes, only: [:create]

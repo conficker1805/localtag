@@ -39,10 +39,24 @@ class BlogsController < ApplicationController
     @relateds = Blog.where(category: @blog.category).order("RANDOM()").limit(1)
   end
 
+  def delete_selected_blogs
+    if blog_ids.nil?
+      flash[:alert] = 'Please select blogs'
+    else
+      Blog.where(id: blog_ids).destroy_all
+      flash[:notice] = 'Deleted blogs successfully.'
+    end
+    redirect_to author_blogs_dashboard_path
+  end
+
   protected
 
   def blog_id
     params.require(:id)
+  end
+
+  def blog_ids
+    params.permit(ids:[])[:ids]
   end
 
   def blog_params
