@@ -28,6 +28,16 @@ header {
 body {
 	background-color: #FFF;
 
+	.processing {
+	  width: 100%;
+	  height: 100%;
+	  top: 0;
+	  z-index: 999999;
+	  position: fixed;
+	  //opacity: 0.5;
+	  //background-color: #CCC;
+	}
+
 	* {
 		font: 14px "Roboto";
 		color: #FFF;
@@ -37,15 +47,19 @@ body {
 
 	&.modal-open:not(.smooth_scroll) {
 		.navbar.navbar-default {
-		  // position: static;
+		 //  width: calc(100% - 15px);
+		 //  /* Firefox */
+			// width: -moz-calc(100% - 15px);
+			// /* WebKit */
+			// width: -webkit-calc(100% - 15px);
+			// /* Opera */
+			// width: -o-calc(100% - 15px);
+			// /* Standard */
+			// width: calc(100% - 15px);
 		}
 
 		.banner-wrap {
 			margin-top: 0px;
-		}
-
-		.content-box {
-			// margin-top: 110px;
 		}
 	}
 }

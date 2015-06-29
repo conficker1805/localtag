@@ -14,9 +14,10 @@ class BlogsController < ApplicationController
     @blog = current_author.blogs.new(blog_params)
 
     if @blog.save
-      render json: { :message => 'Create blog successfully' }, status: :ok
+      flash[:notice] = 'Create blog successfully'
+      render status: :ok, json: { :redirect => author_blogs_dashboard_path }
     else
-      render json: { :message =>  @blog.errors.full_messages.first }, status: 404
+      render status: 404, json: { :message =>  @blog.errors.full_messages.first }
     end
   end
 

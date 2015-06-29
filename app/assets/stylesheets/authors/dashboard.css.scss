@@ -72,6 +72,10 @@
 				  vertical-align: middle !important;
 
 					.checkbox {
+						.checkbox-material:before {
+							margin-top: -5px;
+						}
+
 						.check {
 						  margin-top: -5px;
 						  border: 2px solid #7E7E7E;

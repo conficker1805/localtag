@@ -50,8 +50,15 @@ javascript:
         };
       })(file);
       reader.readAsDataURL(file);
-
     }
+  }
+
+  function set_processing() {
+    $('body').append('<div class="processing"></div>')
+  }
+
+  function remove_processing() {
+    $('.processing').remove();
   }
 
 javascript:
@@ -61,21 +68,18 @@ javascript:
     }
   });
 
-  $('form.ajax').on('ajax:success', function(event, data, status, xhr) {
-    console.log('success')
-  });
-
-  $('form.ajax').on("ajax:error", function(event, data, status, xhr) {
-    console.log('error')
-  });
-
   $("form.ajax").on("ajax:complete", function(event, data, status, xhr){
     var response = JSON.parse(data.responseText)
-    BootstrapDialog.alert(response.message);
+    if (response.redirect)
+      $(location).attr('href', response.redirect);
+    else {
+      remove_processing()
+      BootstrapDialog.alert(response.message);
+    }
   });
 
   $('.submit-now').click(function(){
-    //$(this).closest('form').submit()
+    set_processing()
     $(this).closest('form').trigger('submit.rails');
   })
 
