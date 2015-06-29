@@ -6,9 +6,7 @@ module Authors
 			@blogs = current_author.blogs
 		end
 
-    def my_profile
-
-    end
+    def my_profile; end
 
     def new_blog
       @blog  = Blog.new

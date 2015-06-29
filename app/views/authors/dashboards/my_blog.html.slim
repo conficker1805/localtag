@@ -39,3 +39,16 @@
 															input type="checkbox" value="#{ blog.id }" class="published"
 											td
 												= link_to 'Edit', author_edit_blogs_dashboard_path(blog), class: 'btn btn-default btn-raised'
+
+
+javascript:
+	$('input.published').each(function() {
+    $(this).change(function() {
+      ajax_request(
+      							"#{ change_state_blogs_path }",
+      							{
+											"id": 		$(this).val(),
+											"state": 	$(this).is(":checked")
+										});
+    });
+  });

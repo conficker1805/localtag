@@ -18,8 +18,9 @@ Rails.application.routes.draw do
 
   # Example resource route (maps HTTP verbs to controller actions automatically):
 
-  resource :blogs, only: [:delete_selected_blogs] do
+  resource :blogs, only: [:delete_selected_blogs, :change_state] do
     post :delete_selected_blogs, as: :delete_selected
+    post :change_state
   end
 
   resources :blogs,     except: :destroy
@@ -28,10 +29,10 @@ Rails.application.routes.draw do
   resources :subcribes, only: [:create]
 
   namespace :authors, as: nil do
-    resource :dashboard, only: [:my_post, :my_profile, :new_blog, :edit_blog] do
-      get :my_blog,     as: :author_blogs
-      get :my_profile,  as: :author_profile
-      get :new_blog,    as: :new_blog
+    resource :dashboard, only: [:my_post, :my_profile, :new_blog, :edit_blog, :publised] do
+      get   :my_blog,     as: :author_blogs
+      get   :my_profile,  as: :author_profile
+      get   :new_blog,    as: :new_blog
       get 'blogs/:blog_id/edit' => 'dashboards#edit_blog', as: :author_edit_blogs
     end
   end

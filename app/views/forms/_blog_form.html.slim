@@ -16,7 +16,6 @@
 				span.img-label Cover Photo
 			.col-md-3
 				= image_tag	(@blog.cover_photo), class: 'preview'
-				/= image_tag image_path('blogs/nocover.jpg'), class: 'preview'
 			.col-md-4
 				.button-wrap
 					= link_to 'Choose file', 'javascript:', class: 'choose-file btn btn-default btn-raised', :onclick => 'fake_click(this)'

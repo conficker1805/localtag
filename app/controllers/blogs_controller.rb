@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_filter :authenticate_author!, only: [:new]
+  before_filter :authenticate_author!, except: [:show]
 
   def index
     @search = Blog.search(params[:keyword])
@@ -51,10 +51,26 @@ class BlogsController < ApplicationController
     redirect_to author_blogs_dashboard_path
   end
 
+  def change_state
+    @blog = current_author.blogs.find_by(id: blog_id)
+
+    if @blog
+      @blog.update(published: !@blog.published)
+      render status: :ok, json: { :message => 'Update blog successfully' }
+    else
+      flash[:alert] = "You don't have permission to update this blog"
+      render status: :ok, json: { :redirect => root_path }
+    end
+  end
+
   protected
 
   def blog_id
     params.require(:id)
+  end
+
+  def current_state
+    params.require(:state)
   end
 
   def blog_ids
