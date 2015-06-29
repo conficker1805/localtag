@@ -30,10 +30,9 @@ class BlogsController < ApplicationController
     @blog = Blog.find(blog_id)
 
     if @blog.update(blog_params)
-      redirect_to author_edit_blogs_dashboard_path(@blog), notice: 'Update blog successfully'
+      render status: :ok, json: { :message => 'Update blog successfully' }
     else
-      flash[:alert] = @blog.errors.full_messages.first
-      redirect_to author_edit_blogs_dashboard_path(@blog)
+      render status: 404, json: { :message =>  @blog.errors.full_messages.first }
     end
   end
 

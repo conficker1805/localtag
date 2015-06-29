@@ -12,7 +12,7 @@ class Author < ActiveRecord::Base
   enumerize :role, in: [:author, :manager], default: :author
 
   has_attached_file :avatar, :styles => { :medium => "300x300#", :thumb => "190x190#" },
-  														:default_url => "authors/:style/no-avatar.jpg"
+  													 :default_url => "authors/:style/no-avatar.jpg"
   validates_attachment_size :avatar, :in => 0.megabytes..2.megabytes, message: 'The photo must be less than 2Mb'
   validates_attachment_content_type :avatar, :content_type => /\Aimage\/.*\Z/
 
