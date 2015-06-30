@@ -291,7 +291,7 @@ DEPENDENCIES
   letter_opener
   mina
   paperclip
-  pg
+  pg (= 0.18.2)
   rails (= 4.2.1)
   rails_12factor
   rails_admin
