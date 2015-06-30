@@ -35,7 +35,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Development
-gem 'remotipart', '~> 1.2'
 gem 'slim'
 gem 'devise'
 gem 'ckeditor'
@@ -46,10 +45,11 @@ gem 'rails_admin'
 gem 'ransack'
 gem 'font-awesome-rails'
 gem 'cancancan', '~> 1.10'
+gem 'remotipart', '~> 1.2'
 gem 'will_paginate', '~> 3.0.6'
-
-gem 'aws-sdk', '< 2.0'
 gem 'paperclip'
+gem 'mina'
+gem 'aws-sdk', '< 2.0'
 
 group :production do
   gem 'rails_12factor'

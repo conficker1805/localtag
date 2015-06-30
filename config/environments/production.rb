@@ -94,7 +94,7 @@ Rails.application.configure do
       url: ":s3_domain_url",
       path: "/production/:class/:attachment/:id_partition/:style/:filename",
       s3_credentials: {
-          bucket: 'marine-central-live',
+          bucket: 'localtag',
           access_key_id: ENV['AWS_ACCESS_KEY'],
           secret_access_key: ENV['AWS_SECRET_KEY']
       }
