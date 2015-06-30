@@ -7,9 +7,11 @@ set :shared_paths, ['config/database.yml', 'log']
 set :app, 'localtag'
 set :domain, '52.11.10.136'
 set :repository, 'git@github.com:conficker1805/localtag.git'
+set :branch, 'master'
 set :user, 'localtag'
 set :rvm_path, '/usr/local/rvm'
 set :deploy_to, '/home/localtag/deploy'
+set :term_mode, nil
 
 # For system-wide RVM install.
 #   set :rvm_path, '/usr/local/rvm/bin/rvm'
