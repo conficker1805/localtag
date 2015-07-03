@@ -3,18 +3,17 @@ require 'mina/rails'
 require 'mina/git'
 require 'mina/rvm'
 
-set :shared_paths, ['config/database.yml', 'log']
+set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log']
 set :app, 'localtag'
 set :domain, '52.11.10.136'
 set :repository, 'git@github.com:conficker1805/localtag.git'
 set :branch, 'master'
 set :user, 'localtag'
-set :rvm_path, '/usr/local/rvm'
 set :deploy_to, '/home/localtag/deploy'
 set :term_mode, nil
 
 # For system-wide RVM install.
-#   set :rvm_path, '/usr/local/rvm/bin/rvm'
+set :rvm_path, '/usr/local/rvm/bin/rvm'
 
 
 # Optional settings:
@@ -30,7 +29,7 @@ task :environment do
   # invoke :'rbenv:load'
 
   # For those using RVM, use this to load an RVM version@gemset.
-  # invoke :'rvm:use[ruby-1.9.3-p125@default]'
+  invoke :'rvm:use[ruby-2.1.5@localtag]'
 end
 
 # Put any custom mkdir's in here for when `mina setup` is ran.

@@ -18,7 +18,7 @@
 							.blog-img-wrap
 								= link_to blog_path(blog.id)
 									= image_tag(blog.cover_photo, class: 'cover')
-								= image_tag blog.user.avatar, class: 'author'
+								= image_tag blog.author.avatar, class: 'author'
 							.blog-brief
 								.category-name = blog.category.title
 								.blog-title = blog.title

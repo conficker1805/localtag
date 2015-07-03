@@ -1,5 +1,5 @@
 class BlogsController < ApplicationController
-  before_filter :authenticate_author!, except: [:show]
+  before_filter :authenticate_author!, except: [:show, :index]
 
   def index
     @search = Blog.search(params[:keyword])
