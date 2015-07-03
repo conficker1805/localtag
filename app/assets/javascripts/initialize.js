@@ -61,8 +61,10 @@ $(document).ready(function($) {
     }
   });
 
-  $('.submit-now').click(function(){
+  $('.submit-now').click(function(e){
+    e.preventDefault();
     set_processing()
-    $(this).closest('form').trigger('submit.rails');
+    $(this).closest('form').submit();
+    //$(this).closest('form').trigger('submit.rails');
   })
 }); // End of $(document).ready()
