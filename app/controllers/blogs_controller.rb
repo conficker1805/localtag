@@ -2,7 +2,7 @@ class BlogsController < ApplicationController
   before_filter :authenticate_author!, except: [:show, :index]
 
   def index
-    @search = Blog.search(params[:keyword])
+    @search = Blog.where(status: :approved).search(params[:keyword])
     @blogs = @search.result.paginate(:page => params[:page], :per_page => 6)
   end
 
