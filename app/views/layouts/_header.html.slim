@@ -30,12 +30,12 @@
 					= image_tag "home/brand.png"
 			.navbar-collapse.collapse.navbar-responsive-collapse
 				ul.nav.navbar-nav.navbar-right
-					li = link_to "Home", root_path
-					li = link_to "Services", services_path
+					li = link_to "Home", root_path, class: "#{is_active?(root_path)}"
+					li = link_to "Services", services_path, class: "#{is_active?(services_path)}"
 					li = link_to "Education", "javascript:"
 					li = link_to "XChange", "javascript:"
-					li = link_to "Blog", blogs_path
-					li = link_to "Let's Connect", new_enquiry_path
+					li = link_to "Blog", blogs_path, class: "#{is_active?(blogs_path)}"
+					li = link_to "Let's Connect", new_enquiry_path, class: "#{is_active?(new_enquiry_path)}"
 
 - if !is_author_dashboard? && !is_controller_blog? && !is_home?
 	.banner-wrap

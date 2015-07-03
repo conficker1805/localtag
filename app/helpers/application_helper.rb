@@ -23,6 +23,10 @@ module ApplicationHelper
   	"smooth_scroll" unless disable_smooth_scroll_list.include? "#{controller_name}/#{action_name}"
   end
 
+  def is_active?(link)
+    current_page?(link) ? 'active' : ''
+  end
+
   private
 
   def controller_name

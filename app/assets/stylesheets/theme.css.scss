@@ -45,6 +45,10 @@ body {
 		list-style: none;
 	}
 
+	&:not(.smooth_scroll) main {
+		padding-top: 90px;
+	}
+
 	&.modal-open:not(.smooth_scroll) {
 		.navbar.navbar-default {
 		 //  width: calc(100% - 15px);
