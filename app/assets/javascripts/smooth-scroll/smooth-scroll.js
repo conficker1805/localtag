@@ -52,9 +52,9 @@ $(document).ready(function(){
 		$('#next').unbind('click')
 		$('#prev').unbind('click')
 
-		setTimeout(function(){ 
-			$('#next').bind('click', next) 
-			$('#prev').bind('click', prev) 
+		setTimeout(function(){
+			$('#next').bind('click', next)
+			$('#prev').bind('click', prev)
 		}, 1100)
 
 		$('.banner-wrap, main, footer').css({ '-moz-transform': 'translate(0, ' + variable + 'px)', '-ms-transform': 'translate(0, ' + variable + 'px)', '-webkit-transform': 'translate(0, ' + variable + 'px)', 'transform': 'translate(0, ' + variable + 'px)', '-moz-transform': 'translate3d(0, ' + variable + 'px, 0)', '-ms-transform': 'translate3d(0, ' + variable + 'px, 0)', '-webkit-transform': 	'translate3d(0, ' + variable + 'px, 0)', 'transform': 'translate3d(0, ' + variable + 'px, 0)',});
@@ -79,7 +79,7 @@ $(document).ready(function(){
 
 		sections.each(function() {
 			// Determine next position
-			if ($(this).next().length > 0) 
+			if ($(this).next().length > 0)
 				$(this).attr('data-next', '-' + ($(this).next().offset().top - height_main_menu));
 			else {
 				var scroll_to_footer = $(this).prev().attr('data-next') - $('footer').height() + $(window).height() - $(this).height() - height_main_menu;
@@ -94,11 +94,11 @@ $(document).ready(function(){
 		sections.first().addClass('active').attr('data-prev', 0);
 	}
 
-	$(window).on('mousewheel DOMMouseScroll', function (e) { 
+	$(window).on('mousewheel DOMMouseScroll', function (e) {
 		// Check direction
 	  var direction = (function () {
       var delta = (e.type === 'DOMMouseScroll' ? e.originalEvent.detail * -40 : e.originalEvent.wheelDelta);
-      return delta > 0 ? 'next' : 'prev';
+      return delta > 0 ? 'prev' : 'next';
     }());
 
 		if ($(document).find('.services-index-container').length) {

@@ -4,12 +4,11 @@
 			.row
 				= search_form_for @search, url: blogs_path, html: { class: 'simple_form' } do |s|
 					.col-sm-4
-				 		= s.search_field :title_cont, class: 'form-control floating-label', placeholder: 'Keyword'
-				 	.col-sm-4
-				 		= s.select :category_id_eq, options_from_collection_for_select(Category.all, "id", "title", @search.category_id_eq), {}, class: 'form-control'
-				 	.col-sm-4
-			 			= link_to 'Search', 'javascript:', class: 'btn btn-info btn-raised submit-now'
-
+						= s.search_field :title_cont, class: 'form-control floating-label', placeholder: 'Keyword'
+					.col-sm-4
+						= s.select :category_id_eq, options_from_collection_for_select(Category.all, "id", "title", @search.category_id_eq), {}, class: 'form-control'
+					.col-sm-4
+						= link_to 'Search', 'javascript:', class: 'btn btn-info btn-raised submit-now'
 		.blogs-wrap
 			.row
 				- @blogs.each do |blog|
