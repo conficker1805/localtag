@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   def index
-  	@blogs = Blog.all.order('created_at ASC').limit(4)
+  	@blogs = Blog.where(status: :approved).order('created_at ASC').limit(4)
   end
 
   protected
