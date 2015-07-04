@@ -17,6 +17,11 @@ a, a:hover, a:active, a:visited { color: #FFF; text-decoration: none; }
   position: fixed;
   z-index: 9999;
 
+  @media (max-width: 480px) {
+    position: relative;
+    margin-bottom: -90px;
+  }
+
   .navbar-collapse {
   	height: 90px !important;
 

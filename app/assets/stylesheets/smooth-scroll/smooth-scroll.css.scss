@@ -2,7 +2,7 @@
   transition-delay: $second;
   -o-transition-delay: $second;
   -moz-transition-delay: $second;
-  -webkit-transition-delay: $second; 
+  -webkit-transition-delay: $second;
 }
 
 @mixin transform-translate($pixel) {
@@ -16,100 +16,101 @@
   transform:          translate3d(0, $pixel, 0);
 }
 
-body.smooth_scroll {
-	overflow: hidden;
-}
-
-.banner-wrap, main, footer {
-  @include transform-translate(0px);
-
-  -webkit-transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1); /* older webkit */
-  -webkit-transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005); 
-     -moz-transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005); 
-       -o-transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005); 
-          transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
-
-  -webkit-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1); /* older webkit */
-  -webkit-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005); 
-     -moz-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005); 
-       -o-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005); 
-          transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005);
-}
-
-.fly-box {
-  opacity: 0;
-
-  @include transform-translate(60px);
-
-  -webkit-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1); /* older webkit */
-  -webkit-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005); 
-     -moz-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005); 
-       -o-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005); 
-          transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
-}
-
-.application-index-container {
-  .section.active {
-    .fly-box {
-      opacity:1;
-
-      @include transform-translate(0px);
-    }
-  }
-  
-  .section-3.active .fly-box {
-    &.blog {
-      &:nth-child(1) { @include transition-delay(0.2s); }
-      &:nth-child(2) { @include transition-delay(0.4s); }
-      &:nth-child(3) { @include transition-delay(0.6s); }
-      &:nth-child(4) { @include transition-delay(0.8s); }
-    }
-
-    &.btn-wrap {
-      @include transition-delay(1s);
-    }
+@media (min-width: 480px) {
+  body.smooth_scroll {
+  	overflow: hidden;
   }
 
-  .section-4.active .fly-box {
-    &.service-wrap {
-      &:nth-of-type(1) { @include transition-delay(0.3s); }
-      &:nth-of-type(2) { @include transition-delay(0.6s); }
-      &:nth-of-type(3) { @include transition-delay(0.9s); }
+  .banner-wrap, main, footer {
+    @include transform-translate(0px);
+
+    -webkit-transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1); /* older webkit */
+    -webkit-transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
+       -moz-transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
+         -o-transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
+            transition: transform 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
+
+    -webkit-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1); /* older webkit */
+    -webkit-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005);
+       -moz-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005);
+         -o-transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005);
+            transition-timing-function: cubic-bezier(0.585, 0.005, 0.320, 1.005);
+  }
+
+  .fly-box {
+    opacity: 0;
+
+    @include transform-translate(60px);
+
+    -webkit-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1); /* older webkit */
+    -webkit-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
+       -moz-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
+         -o-transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
+            transition: all 1000ms cubic-bezier(0.585, 0.005, 0.320, 1.005);
+  }
+
+  .application-index-container {
+    .section.active {
+      .fly-box {
+        opacity:1;
+
+        @include transform-translate(0px);
+      }
+    }
+
+    .section-3.active .fly-box {
+      &.blog {
+        &:nth-child(1) { @include transition-delay(0.2s); }
+        &:nth-child(2) { @include transition-delay(0.4s); }
+        &:nth-child(3) { @include transition-delay(0.6s); }
+        &:nth-child(4) { @include transition-delay(0.8s); }
+      }
+
+      &.btn-wrap {
+        @include transition-delay(1s);
+      }
+    }
+
+    .section-4.active .fly-box {
+      &.service-wrap {
+        &:nth-of-type(1) { @include transition-delay(0.3s); }
+        &:nth-of-type(2) { @include transition-delay(0.6s); }
+        &:nth-of-type(3) { @include transition-delay(0.9s); }
+      }
+    }
+  }
+
+  .services-index-container {
+    .content .fly-box {
+      &.active {
+        opacity: 1;
+      }
+
+      $height: -261px;
+
+      &:nth-child(1) {
+        @include transform-translate($height * 0 + 50px);
+        &.active { @include transform-translate($height * 0); }
+      }
+
+      &:nth-child(2) {
+        @include transform-translate($height * 1 + 50px);
+        &.active { @include transform-translate($height * 1); }
+      }
+
+      &:nth-child(3) {
+        @include transform-translate($height * 2 + 50px);
+        &.active { @include transform-translate($height * 2); }
+      }
+
+      &:nth-child(4) {
+        @include transform-translate($height * 3 + 50px);
+        &.active { @include transform-translate($height * 3); }
+      }
+
     }
   }
 }
-
-.services-index-container {
-  .content .fly-box {
-    &.active { 
-      opacity: 1; 
-    }
-
-    $height: -261px;
-
-    &:nth-child(1) { 
-      @include transform-translate($height * 0 + 50px);
-      &.active { @include transform-translate($height * 0); }
-    }
-
-    &:nth-child(2) { 
-      @include transform-translate($height * 1 + 50px); 
-      &.active { @include transform-translate($height * 1); }
-    }
-
-    &:nth-child(3) { 
-      @include transform-translate($height * 2 + 50px); 
-      &.active { @include transform-translate($height * 2); }
-    }
-
-    &:nth-child(4) { 
-      @include transform-translate($height * 3 + 50px); 
-      &.active { @include transform-translate($height * 3); }
-    }
-    
-  }
-}
-
 
 
 
