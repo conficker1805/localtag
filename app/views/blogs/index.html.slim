@@ -20,7 +20,7 @@
 								= image_tag blog.author.avatar, class: 'author'
 							.blog-brief
 								.category-name = blog.category.title
-								.blog-title = blog.title
+								.blog-title = link_to blog.title, blog_path(blog)
 								.blog-intro = blog.intro
 				.col-md-12
 					= will_paginate @blogs
