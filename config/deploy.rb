@@ -5,7 +5,8 @@ require 'mina/rvm'
 
 set :shared_paths, ['config/database.yml', 'config/secrets.yml', 'log']
 set :app, 'localtag'
-set :domain, '52.11.10.136'
+# set :domain, '52.11.10.136'
+set :domain, '223.27.29.134'
 set :repository, 'git@github.com:conficker1805/localtag.git'
 set :branch, 'master'
 set :user, 'localtag'
